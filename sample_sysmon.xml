@@ -1,0 +1,194 @@
+<!--
+  Sample Sysmon records, in the XML that Event Viewer exports.
+
+  This data is synthetic. It exists to show that the parser fills the schema.
+  Do not use it in the results chapter. The results need a real capture from
+  the analysis VM.
+
+  The records hold fields that the schema does not keep, such as RuleName,
+  ProcessGuid, User and Hashes. The parser discards them. The last record has
+  no EventID, so the parser cannot read it. The parser skips that record and
+  continues, which is the error handling requirement in section 4.1.2.
+-->
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:00.1234567Z"/>
+    <EventRecordID>1</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2026-07-28 09:20:00.123</Data>
+    <Data Name="ProcessGuid">{a1b2c3d4-0001-0000-0000-000000000001}</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="CommandLine">"C:\Users\kai\Downloads\invoice.exe"</Data>
+    <Data Name="User">ANALYSIS-VM\kai</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA256=9F2A4C1E7B3D5068A1C4E9F0B2D6A8C3E5F70192B4C6D8E0F2A4B6C8D0E2F4A6</Data>
+    <Data Name="ParentProcessId">812</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:03.4410000Z"/>
+    <EventRecordID>2</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="QueryName">updates.example-cdn.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">type: 5 203.0.113.7;</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:03.9020000Z"/>
+    <EventRecordID>3</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="SourceIp">192.168.56.20</Data>
+    <Data Name="SourcePort">51514</Data>
+    <Data Name="DestinationIp">203.0.113.7</Data>
+    <Data Name="DestinationPort">8443</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:05.2670000Z"/>
+    <EventRecordID>4</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1004\Software\Microsoft\Windows\CurrentVersion\Run\Updater</Data>
+    <Data Name="Details">C:\Users\kai\AppData\Roaming\updater.exe</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>11</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:11.0480000Z"/>
+    <EventRecordID>5</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="TargetFilename">C:\Users\kai\Documents\report.docx.locked</Data>
+    <Data Name="CreationUtcTime">2026-07-28 09:20:11.048</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>11</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:11.2910000Z"/>
+    <EventRecordID>6</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="TargetFilename">C:\Users\kai\Documents\accounts.xlsx.locked</Data>
+    <Data Name="CreationUtcTime">2026-07-28 09:20:11.291</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>23</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:11.5330000Z"/>
+    <EventRecordID>7</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="TargetFilename">C:\Users\kai\Documents\report.docx</Data>
+    <Data Name="Archived">false</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:14.7750000Z"/>
+    <EventRecordID>8</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="ProcessId">5180</Data>
+    <Data Name="Image">C:\Windows\System32\vssadmin.exe</Data>
+    <Data Name="CommandLine">vssadmin.exe delete shadows /all /quiet</Data>
+    <Data Name="User">ANALYSIS-VM\kai</Data>
+    <Data Name="IntegrityLevel">High</Data>
+    <Data Name="ParentProcessId">4404</Data>
+    <Data Name="ParentImage">C:\Users\kai\Downloads\invoice.exe</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>8</EventID>
+    <TimeCreated SystemTime="2026-07-28T09:20:19.6120000Z"/>
+    <EventRecordID>9</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="SourceProcessId">4404</Data>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+    <Data Name="TargetProcessId">812</Data>
+    <Data Name="TargetImage">C:\Windows\explorer.exe</Data>
+    <Data Name="StartAddress">0x00007FFAB1C24010</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <TimeCreated SystemTime="2026-07-28T09:20:21.0000000Z"/>
+    <EventRecordID>10</EventRecordID>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>ANALYSIS-VM</Computer>
+  </System>
+  <EventData>
+    <Data Name="ProcessId">4404</Data>
+    <Data Name="Image">C:\Users\kai\Downloads\invoice.exe</Data>
+  </EventData>
+</Event>

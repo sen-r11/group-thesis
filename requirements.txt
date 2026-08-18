@@ -1,0 +1,4 @@
+# The .xml and .jsonl readers need nothing. These two cover the other inputs.
+
+python-evtx>=0.7.4      # .evtx files                    -> parse.py from_evtx
+pywin32>=306            # the live channel, Windows only -> parse.py from_live

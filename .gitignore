@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# never commit raw Sysmon exports or samples
+*.evtx
+*.zip
+logs/
+
+README.md
+
+.VSCodeCounter/**
