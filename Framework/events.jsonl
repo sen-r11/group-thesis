@@ -1,0 +1,9 @@
+{"kind": "host", "event_id": 1, "time": 1785230400.123456, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "cmdline": "\"C:\\Users\\kai\\Downloads\\invoice.exe\"", "ppid": 812, "parent": "C:\\Windows\\explorer.exe"}
+{"kind": "host", "event_id": 22, "time": 1785230403.441, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "dns": "updates.example-cdn.net"}
+{"kind": "host", "event_id": 3, "time": 1785230403.902, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "dest": "203.0.113.7", "port": "8443"}
+{"kind": "host", "event_id": 13, "time": 1785230405.267, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "registry": "HKU\\S-1-5-21-1004\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater", "detail": "C:\\Users\\kai\\AppData\\Roaming\\updater.exe"}
+{"kind": "host", "event_id": 11, "time": 1785230411.048, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "path": "C:\\Users\\kai\\Documents\\report.docx.locked"}
+{"kind": "host", "event_id": 11, "time": 1785230411.291, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "path": "C:\\Users\\kai\\Documents\\accounts.xlsx.locked"}
+{"kind": "host", "event_id": 23, "time": 1785230411.533, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "path": "C:\\Users\\kai\\Documents\\report.docx"}
+{"kind": "host", "event_id": 1, "time": 1785230414.775, "pid": 5180, "process": "C:\\Windows\\System32\\vssadmin.exe", "cmdline": "vssadmin.exe delete shadows /all /quiet", "ppid": 4404, "parent": "C:\\Users\\kai\\Downloads\\invoice.exe"}
+{"kind": "host", "event_id": 8, "time": 1785230419.612, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "target": "C:\\Windows\\explorer.exe"}
