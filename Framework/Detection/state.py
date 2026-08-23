@@ -34,11 +34,12 @@ class ProcessState:
     family_scores: Dict[str, float] = field(default_factory=lambda: {family: 0.0 for family in FAMILIES})
     evidence: List[Evidence] = field(default_factory=list)
     fired: Set[str] = field(default_factory=set)
+    scored: Set[str] = field(default_factory=set)
 
     def add_scores(self, weights: Dict[str, float]) -> None:
         for family, weight in weights.items():
             if family in self.family_scores:
-                self.family_scores[family] = min(1.0, self.family_scores[family] + float(weight))
+                self.family_scores[family] += float(weight)
 
     def best_family(self) -> Tuple[str, float]:
         family = max(self.family_scores, key=self.family_scores.get)

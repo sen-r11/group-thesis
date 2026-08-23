@@ -39,6 +39,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
                 "ransomware": 0.25,
             },
             fingerprint=f"suspicious_extension:{root_pid}:{path}",
+            score_key=f"suspicious_extension:{root_pid}",
             details={
                 "path": event.get("path", ""),
                 "extension": matched_extension,

@@ -1,16 +1,20 @@
 {
   "verdict": "malicious",
-  "family": "ransomware",
-  "leading_family": "ransomware",
-  "score": 1.0,
+  "family": "rat",
+  "leading_family": "rat",
+  "possible_families": [
+    "rat",
+    "ransomware"
+  ],
+  "score": 1.15,
   "threshold": 0.7,
   "events_processed": 9,
   "pid": 4404,
   "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
   "family_scores": {
-    "ransomware": 1.0,
+    "ransomware": 1.1,
     "spyware": 0.9,
-    "rat": 1.0
+    "rat": 1.15
   },
   "triggered_indicators": [
     "suspicious_dns",
@@ -96,9 +100,7 @@
         "path": "C:\\Users\\kai\\Documents\\accounts.xlsx.locked",
         "extension": ".locked"
       },
-      "weights": {
-        "ransomware": 0.25
-      }
+      "weights": {}
     },
     {
       "indicator": "shadow_copy_deletion",

@@ -18,6 +18,7 @@ from Detection.indicators import DETECTORS
 from Detection.state import Evidence, FAMILIES, StateStore
 
 DEFAULT_THRESHOLD = 0.70
+FAMILY_MARGIN = 0.15
 
 class DetectionEngine:
     def __init__(self, threshold: float = DEFAULT_THRESHOLD) -> None:
@@ -49,7 +50,14 @@ class DetectionEngine:
                     continue
 
                 target.fired.add(finding.fingerprint)
-                target.add_scores(finding.weights)
+                score_key = finding.score_key or finding.fingerprint
+                applied_weights = {}
+
+                if score_key not in target.scored:
+                    target.scored.add(score_key)
+                    target.add_scores(finding.weights)
+                    applied_weights = finding.weights
+
                 target.evidence.append(
                     Evidence(
                         indicator=finding.indicator,
@@ -58,16 +66,16 @@ class DetectionEngine:
                         event_id=int(event.get("event_id") or 0),
                         process=direct_state.process,
                         details=finding.details,
-                        weights=finding.weights,
+                        weights=applied_weights,
                     )
                 )
 
-                family, score = target.best_family()
+                family, score, possible_families = self._family_matches(target)
                 alert_key = (target.pid, family)
 
                 if score >= self.threshold and alert_key not in self._alerted:
                     self._alerted.add(alert_key)
-                    alert = self._make_alert(target.pid, family, score)
+                    alert = self._make_alert(target.pid, family, score, possible_families)
                     self.alerts.append(alert)
                     new_alerts.append(alert)
 
@@ -78,15 +86,34 @@ class DetectionEngine:
             self.process_event(event)
         return self.result()
     
-    def _make_alert(self, pid: int, family: str, score: float) -> Dict[str, object]:
+    def _family_matches(self,state):
+        ranked = sorted(
+            state.family_scores.items(),
+            key=lambda item: item[1],
+            reverse=True,
+        )
+
+        leading_family, leading_score = ranked[0]
+
+        possible_families = [
+            family 
+            for family, score in ranked
+            if score > 0 and leading_score - score <= FAMILY_MARGIN
+        ]
+
+        return leading_family, leading_score, possible_families
+    
+    def _make_alert(self, pid: int, family: str, score: float, possible_families: List[str]) -> Dict[str, object]:
         state = self.state.ensure(pid)
         return {
             "verdict": "malicious",
             "family": family,
+            "possible_families": possible_families,
             "score": round(score, 3),
             "threshold": self.threshold,
             "pid": state.pid,
             "process": state.process,
+            "family_scores": {name: round(value, 3) for name, value in state.family_scores.items()},
             "triggered_indicators": [item.indicator for item in state.evidence],
             "evidence": [asdict(item) for item in state.evidence],
             "process_tree": self.state.process_tree(state.pid),
@@ -98,14 +125,15 @@ class DetectionEngine:
         for state in self.state.processes.values():
             if not state.evidence:
                 continue
-            family, score = state.best_family()
-            candidates.append((score, family, state))
+            family, score, possible_families = self._family_matches(state)
+            candidates.append((score, family, possible_families, state))
 
         if not candidates:
             return {
                 "verdict": "benign",
                 "family": None,
                 "leading_family": None,
+                "possible_families": [],
                 "score": 0.0,
                 "threshold": self.threshold,
                 "events_processed": self.events_processed,
@@ -117,13 +145,14 @@ class DetectionEngine:
                 "process_tree": None,
             }
         
-        score, family, state = max(candidates, key=lambda item: item[0])
+        score, family, possible_families, state = max(candidates, key=lambda item: item[0])
         verdict = "malicious" if score >= self.threshold else "benign"
 
         return{
             "verdict": verdict,
             "family": family if verdict == "malicious" else None,
             "leading_family": family,
+            "possible_families": possible_families if verdict == "malicious" else [],
             "score": round(score, 3),
             "threshold": self.threshold,
             "events_processed": self.events_processed,
@@ -146,6 +175,10 @@ def print_result(result: Dict[str,object]) -> None:
         print("Family: %s" % result["family"])
     elif result.get("leading_family"):
         print("Leading Family: %s" % result["leading_family"])
+
+    possible_families = result.get("possible_families") or []
+    if len(possible_families) > 1:
+        print("Possible Families: %s" % ", ".join(possible_families))
 
     print("Score:   %.3f" % result["score"])
     print("Threshold:   %.3f" % result["threshold"])
