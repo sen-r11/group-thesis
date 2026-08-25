@@ -8,7 +8,7 @@ Takes in detection engine output and produces alerts in two formats.
 
 Run from parent directory of "Alerts" so python can locate package
 
-    python -m Alerts.main/py -m Alerts.main
+    python -m Alerts.main / py -m Alerts.main
 
 to use a different result file edit the input path in main.py
 
