@@ -8,6 +8,4 @@ venv/
 *.zip
 logs/
 
-README.md
-
 .VSCodeCounter/**
