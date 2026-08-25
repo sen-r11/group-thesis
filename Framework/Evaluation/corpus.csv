@@ -1,0 +1,3 @@
+sample_id,path,label,family
+events.jsonl,../Test Data/events.jsonl,malicious,ransomware
+benign_test.jsonl,../Test Data/benign_test.jsonl,benign,

@@ -1,0 +1,1 @@
+{"kind":"host","event_id":1,"time":1760000000.0,"pid":2000,"process":"C:\\Windows\\System32\\notepad.exe","ppid":1000,"parent":"C:\\Windows\\explorer.exe","cmdline":"notepad.exe"}
