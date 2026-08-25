@@ -1,13 +1,16 @@
-# The .xml and .jsonl readers need nothing. These two cover the other inputs.
+# The .xml and .jsonl readers need nothing. These cover the other inputs.
 
 python-evtx>=0.7.4      # .evtx files                    -> parse.py from_evtx
 pywin32>=306            # the live channel, Windows only -> parse.py from_live
+scikit-learn>=1.3.0     # the metrics                    -> Evaluation/harness.py
 
-# for the evaluation component
-
-pip install scikit-learn
-
-
-
-to run the parser: python parse.py "name of Sysmon .xml file" --json events.jsonl
-to run the detection engine: python -m Detection.engine events.jsonl --json result.json
+# Install with:  pip install -r requirements.txt
+#
+# Run the parser, from Framework/:
+#   python parse.py "name of Sysmon .xml file" --json events.jsonl
+#
+# Run the detection engine, from Framework/:
+#   python -m Detection.engine events.jsonl --json result.json
+#
+# Run the evaluation harness, from Framework/:
+#   python -m Evaluation.harness Evaluation/corpus.csv
