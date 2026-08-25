@@ -1,17 +1,8 @@
-"""The parser. It changes raw Sysmon records to schema events.
+# The parser. It changes raw Sysmon records to schema events.
 
-Read a saved export:
-
-    python parse.py sample_sysmon.xml
-
-Read the live Sysmon channel for 60 seconds. This needs administrator rights:
-
-    python parse.py --live 60
-
-Write the events to a .jsonl file, which is the schema on disk:
-
-    python parse.py sample_sysmon.xml --json events.jsonl
-"""
+# python parse.py sample_sysmon.xml
+# python parse.py --live 60
+# python parse.py sample_sysmon.xml --json events.jsonl
 
 import argparse
 import json
@@ -26,11 +17,8 @@ NS = "{http://schemas.microsoft.com/win/2004/08/events/event}"
 
 
 def parse_time(text):
-    """Convert a Sysmon timestamp to a Unix timestamp in seconds.
-
-    Sysmon writes seven digits after the point. datetime reads six, so this
-    cuts the extra digit. The loss is 100 nanoseconds.
-    """
+    # Sysmon writes seven digits after the point and datetime reads six,
+    # so this cuts the extra digit
     text = text.replace("Z", "+00:00")
     if "." in text:
         head, rest = text.split(".", 1)
@@ -46,7 +34,6 @@ def parse_time(text):
 
 
 def parse_element(root):
-    #Convert one <Event> element to a schema event.
     system = root.find(NS + "System")
     event = {
         "kind": schema.HOST,
@@ -59,7 +46,7 @@ def parse_element(root):
         name = schema.FIELD_MAP.get(node.get("Name"))
         if name:
             event[name] = node.text or ""
-    for field in ("pid", "ppid"):
+    for field in ("pid", "ppid", "target_pid"):
         value = event.get(field)
         if isinstance(value, str) and value.isdigit():
             event[field] = int(value)
@@ -67,16 +54,12 @@ def parse_element(root):
 
 
 def parse_xml(xml_text):
-    """Convert one raw Sysmon event in XML text to a schema event."""
     return parse_element(ET.fromstring(xml_text))
 
 
 def from_xml_file(path):
-    #Read a Sysmon export in XML. Event Viewer writes this format.
-    #The export holds one <Event> element for each record, and it has no root
-    #element around them. XML needs one root, so this adds one when the text
-    #does not parse without it.
-
+    # Event Viewer exports one <Event> for each record with no root element
+    # around them, so this adds one when the text will not parse without it
     with open(path, "r", encoding="utf-8") as handle:
         text = handle.read()
     try:
@@ -91,11 +74,10 @@ def from_xml_file(path):
         try:
             yield parse_element(node)
         except Exception:
-            continue    # a record that will not parse can't stop the run
+            continue
 
 
 def from_evtx(path):
-    """Read a saved .evtx file. This needs python-evtx."""
     from Evtx.Evtx import Evtx
 
     with Evtx(path) as log:
@@ -107,7 +89,6 @@ def from_evtx(path):
 
 
 def from_jsonl(path):
-    """Read events that the parser wrote before. One JSON object a line."""
     with open(path, "r", encoding="utf-8") as handle:
         for line in handle:
             line = line.strip()
@@ -117,7 +98,6 @@ def from_jsonl(path):
 
 
 def open_file(path):
-    #Pick a reader from the file name.
     lower = path.lower()
     if lower.endswith(".evtx"):
         return from_evtx(path)
@@ -128,34 +108,22 @@ def open_file(path):
     raise ValueError("unknown file type: %s" % path)
 
 
-NO_MORE_ITEMS = 259     # the wait ended and no event arrived. this is normal.
-INVALID_OPERATION = 4317    # no read is pending. also normal.
-ACCESS_DENIED = 5       # the channel needs administrator rights
-MAX_ERRORS = 10         # real errors in a row before the reader gives up
+NO_MORE_ITEMS = 259
+INVALID_OPERATION = 4317
+ACCESS_DENIED = 5
+MAX_ERRORS = 10
 
 QUIET = (NO_MORE_ITEMS, INVALID_OPERATION)
 
 
 def from_live(timeout_ms=2000, seconds=None):
-    """Read the live Sysmon channel. This needs pywin32, on Windows.
-
-    The reader stops after the given number of seconds. It runs until Ctrl+C
-    when seconds is None.
-
-    A quiet channel and a broken channel look the same from one call, so this
-    counts the errors that are not the normal timeout. It stops after
-    MAX_ERRORS of them. Without that count, a long run can spin and write
-    nothing.
-    """
     import win32event
     import win32evtlog
 
     channel = "Microsoft-Windows-Sysmon/Operational"
-    # EvtSubscribe needs a signal event or a callback. With neither it
-    # answers error 87 and the message does not say why. Windows never
-    # signals this event for our subscription, so the reader ignores it and
-    # lets EvtNext do the waiting. The name must stay in scope, because the
-    # subscription holds it.
+    # EvtSubscribe needs a signal event or a callback, and answers error 87
+    # with neither. Windows never signals it for this subscription, so the
+    # name only has to stay in scope while the subscription holds it.
     signal = win32event.CreateEvent(None, 0, 0, None)
     try:
         handle = win32evtlog.EvtSubscribe(
@@ -174,8 +142,10 @@ def from_live(timeout_ms=2000, seconds=None):
             records = win32evtlog.EvtNext(handle, 32, int(timeout_ms), 0)
             errors = 0
         except Exception as problem:
+            # A quiet channel and a broken one look the same from one call,
+            # so the errors that are not the normal timeout are counted
             if getattr(problem, "winerror", None) in QUIET:
-                continue    # no event arrived inside the timeout
+                continue
             errors += 1
             if errors >= MAX_ERRORS:
                 raise RuntimeError(
@@ -193,7 +163,6 @@ def from_live(timeout_ms=2000, seconds=None):
 
 
 def show(event):
-    """Print one event in a readable form."""
     stamp = datetime.fromtimestamp(event["time"]).strftime("%H:%M:%S.%f")[:-3]
     print("%s  %-2d %-18s pid %-6s %s" % (
         stamp, event["event_id"], schema.name_of(event["event_id"]),
@@ -205,8 +174,7 @@ def show(event):
 def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Change raw Sysmon records to schema events.")
-    parser.add_argument(
-        "path", nargs="?", help="a .evtx, .xml or .jsonl file")
+    parser.add_argument("path", nargs="?", help="a .evtx, .xml or .jsonl file")
     parser.add_argument(
         "--live", type=float, metavar="SECONDS",
         help="read the live Sysmon channel instead of a file")

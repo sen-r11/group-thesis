@@ -1,0 +1,167 @@
+<!--
+  Sysmon configuration for this framework.
+
+  It logs the event IDs that schema.py maps and nothing else. An event that
+  Sysmon does not write cannot be parsed, scored or detected, so a missing
+  event ID here is a blind spot in every result. An event ID that no rule
+  reads is volume with no detection value, so those are turned off.
+
+  Apply it with the setup option of live.py, or by hand:
+      sysmon.exe -accepteula -i sysmon-config.xml
+  Change it later with:
+      sysmon.exe -c sysmon-config.xml
+
+  (An XML comment cannot hold a double hyphen, so the command line options
+  of live.py are named in words here rather than written out.)
+
+  Logged, because a rule reads them:
+     1  ProcessCreate       shadow_copy_deletion, suspicious_process_spawn,
+                            unusual_parent_child, scheduled_task_persistence
+     3  NetworkConnect      suspicious_network, c2_beaconing
+     8  CreateRemoteThread  process_injection
+    10  ProcessAccess       process_access, privileged_process_access
+    11  FileCreate          suspicious_extensions, rapid_files
+    12  RegistryAddDelete   held in state
+    13  RegistrySetValue    persistence
+    17  PipeCreated         named_pipe_channel
+    18  PipeConnected       named_pipe_channel
+    22  DnsQuery            suspicious_dns, dns_fanout
+    23  FileDelete          file_deletion, rapid_files
+    25  ProcessTampering    process_tampering
+
+  Not logged, because no rule reads them and both are high volume:
+     7  ImageLoad
+    15  FileCreateStreamHash
+
+  An empty exclude group logs every event of that type. An empty include
+  group logs none, because nothing can match it.
+
+  The schema version below is 4.90. Sysmon accepts a config written for its
+  own schema or an older one, and refuses a newer one. Sysmon 15.21 declares
+  4.91, so 4.90 loads there and on older builds as well. Raise it only if a
+  rule needs a tag that a later schema added.
+
+  This is tuned for a malware analysis run, which is short. Registry and
+  ProcessAccess are logged without filtering so that no detection is missed,
+  and both are heavy. Before recording the long benign baseline in section
+  3.2, expect a large file and check the free disk space first.
+-->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+  <CheckRevocation>False</CheckRevocation>
+
+  <EventFiltering>
+
+    <!-- 1 ProcessCreate -->
+    <RuleGroup name="process create" groupRelation="or">
+      <ProcessCreate onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 2 FileCreateTime: no rule reads it -->
+    <RuleGroup name="file create time" groupRelation="or">
+      <FileCreateTime onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 3 NetworkConnect -->
+    <RuleGroup name="network connect" groupRelation="or">
+      <NetworkConnect onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 5 ProcessTerminate: not in the schema -->
+    <RuleGroup name="process terminate" groupRelation="or">
+      <ProcessTerminate onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 6 DriverLoad: not in the schema -->
+    <RuleGroup name="driver load" groupRelation="or">
+      <DriverLoad onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 7 ImageLoad: no rule reads it, and it is very high volume -->
+    <RuleGroup name="image load" groupRelation="or">
+      <ImageLoad onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 8 CreateRemoteThread -->
+    <RuleGroup name="create remote thread" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 9 RawAccessRead: not in the schema -->
+    <RuleGroup name="raw access read" groupRelation="or">
+      <RawAccessRead onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 10 ProcessAccess -->
+    <RuleGroup name="process access" groupRelation="or">
+      <ProcessAccess onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 11 FileCreate -->
+    <RuleGroup name="file create" groupRelation="or">
+      <FileCreate onmatch="exclude"/>
+    </RuleGroup>
+
+    <!--
+      12, 13 and 14 RegistryEvent. Only the persistence rule reads registry
+      activity, and it reads 13 SetValue.
+
+      Logging all three produced 16,706 event 12 records in 63 seconds on an
+      ordinary desktop, which was 78 percent of everything captured, and no
+      rule reads one of them. Excluding the key operations leaves SetValue,
+      which was 355 records over the same minute.
+
+      EventType names the operation: CreateKey, DeleteKey and DeleteValue
+      are event 12, SetValue is event 13, RenameKey is event 14.
+    -->
+    <RuleGroup name="registry" groupRelation="or">
+      <RegistryEvent onmatch="exclude">
+        <EventType condition="is">CreateKey</EventType>
+        <EventType condition="is">DeleteKey</EventType>
+        <EventType condition="is">DeleteValue</EventType>
+        <EventType condition="is">RenameKey</EventType>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- 15 FileCreateStreamHash: no rule reads it -->
+    <RuleGroup name="file stream" groupRelation="or">
+      <FileCreateStreamHash onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 17 PipeCreated and 18 PipeConnected -->
+    <RuleGroup name="named pipe" groupRelation="or">
+      <PipeEvent onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 19, 20 and 21 WmiEvent: not in the schema -->
+    <RuleGroup name="wmi" groupRelation="or">
+      <WmiEvent onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 22 DnsQuery -->
+    <RuleGroup name="dns" groupRelation="or">
+      <DnsQuery onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 23 FileDelete, which keeps the deleted file -->
+    <RuleGroup name="file delete" groupRelation="or">
+      <FileDelete onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 24 ClipboardChange: not in the schema -->
+    <RuleGroup name="clipboard" groupRelation="or">
+      <ClipboardChange onmatch="include"/>
+    </RuleGroup>
+
+    <!-- 25 ProcessTampering -->
+    <RuleGroup name="process tampering" groupRelation="or">
+      <ProcessTampering onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- 26 FileDeleteDetected: 23 already covers deletion -->
+    <RuleGroup name="file delete detected" groupRelation="or">
+      <FileDeleteDetected onmatch="include"/>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>

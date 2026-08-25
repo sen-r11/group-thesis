@@ -8,4 +8,10 @@ venv/
 *.zip
 logs/
 
+# the malware itself, and what came out of detonating it. captures hold
+# real host paths and user names, and samples must never leave the VM.
+samples/
+captures/
+live_alerts.jsonl
+
 .VSCodeCounter/**
