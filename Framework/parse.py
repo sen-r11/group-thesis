@@ -46,7 +46,7 @@ def parse_time(text):
 
 
 def parse_element(root):
-    """Convert one <Event> element to a schema event."""
+    #Convert one <Event> element to a schema event.
     system = root.find(NS + "System")
     event = {
         "kind": schema.HOST,
@@ -72,12 +72,11 @@ def parse_xml(xml_text):
 
 
 def from_xml_file(path):
-    """Read a Sysmon export in XML. Event Viewer writes this format.
+    #Read a Sysmon export in XML. Event Viewer writes this format.
+    #The export holds one <Event> element for each record, and it has no root
+    #element around them. XML needs one root, so this adds one when the text
+    #does not parse without it.
 
-    The export holds one <Event> element for each record, and it has no root
-    element around them. XML needs one root, so this adds one when the text
-    does not parse without it.
-    """
     with open(path, "r", encoding="utf-8") as handle:
         text = handle.read()
     try:
@@ -92,7 +91,7 @@ def from_xml_file(path):
         try:
             yield parse_element(node)
         except Exception:
-            continue    # a record that will not parse must not stop the run
+            continue    # a record that will not parse can't stop the run
 
 
 def from_evtx(path):
@@ -118,7 +117,7 @@ def from_jsonl(path):
 
 
 def open_file(path):
-    """Pick a reader from the file name."""
+    #Pick a reader from the file name.
     lower = path.lower()
     if lower.endswith(".evtx"):
         return from_evtx(path)

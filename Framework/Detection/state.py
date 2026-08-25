@@ -111,7 +111,7 @@ class StateStore:
             state.registry_events.popleft()
 
     def attribution_state(self, pid: int) -> ProcessState:
-        #Roll a child aciton up to the highest process seen in the same tree
+        #Roll a child action up to the highest process seen in the same tree
         current = self.ensure(pid)
         seen: Set[int] = set()
 

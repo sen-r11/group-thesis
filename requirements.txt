@@ -3,6 +3,10 @@
 python-evtx>=0.7.4      # .evtx files                    -> parse.py from_evtx
 pywin32>=306            # the live channel, Windows only -> parse.py from_live
 
+# for the evaluation component
+
+pip install scikit-learn
+
 
 
 to run the parser: python parse.py "name of Sysmon .xml file" --json events.jsonl

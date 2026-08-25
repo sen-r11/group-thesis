@@ -1,0 +1,74 @@
+{
+  "threshold": 0.7,
+  "samples": [
+    {
+      "sample_id": "events.jsonl",
+      "telemetry_path": "C:\\Users\\kener\\Documents\\GitHub\\group-thesis\\Framework\\Test Data\\events.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "malicious",
+      "expected_family": "ransomware",
+      "predicted_family": "rat",
+      "score": 1.15,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 1.1,
+        "spyware": 0.9,
+        "rat": 1.15
+      },
+      "possible_families": [
+        "rat",
+        "ransomware"
+      ],
+      "triggered_indicators": [
+        "suspicious_dns",
+        "suspicious_network_connection",
+        "registry_persistence",
+        "suspicious_file_extension",
+        "suspicious_file_extension",
+        "shadow_copy_deletion",
+        "suspicious_process_spawn",
+        "create_remote_thread"
+      ],
+      "events_processed": 9,
+      "events_until_detection": 8,
+      "file_event_count_until_detection": 3,
+      "first_detection_time": 1785230414.775,
+      "detection_delay_seconds": 14.6515
+    },
+    {
+      "sample_id": "benign_test.jsonl",
+      "telemetry_path": "C:\\Users\\kener\\Documents\\GitHub\\group-thesis\\Framework\\Test Data\\benign_test.jsonl",
+      "expected_verdict": "benign",
+      "predicted_verdict": "benign",
+      "expected_family": null,
+      "predicted_family": null,
+      "score": 0.0,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.0,
+        "spyware": 0.0,
+        "rat": 0.0
+      },
+      "possible_families": [],
+      "triggered_indicators": [],
+      "events_processed": 1,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    }
+  ],
+  "metrics": {
+    "true_positive": 1,
+    "false_positive": 0,
+    "true_negative": 1,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "family_evaluated": 1,
+    "detected_family_classification_accuracy": 0.0,
+    "mean_detection_delay_seconds": 14.6515
+  }
+}

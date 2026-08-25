@@ -32,7 +32,6 @@ class DetectionEngine:
         self._alerted = set()
 
     def process_event(self, event: Dict[str, object]) -> List[Dict[str, object]]:
-        # Process one event produced by parse.py
         self.events_processed += 1
         direct_state = self.state.observe(event)
         new_alerts = []
