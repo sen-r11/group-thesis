@@ -172,30 +172,10 @@ def print_result(result: Dict[str,object]) -> None:
 
     if result.get("family"):
         print("Family: %s" % result["family"])
-    elif result.get("leading_family"):
-        print("Leading Family: %s" % result["leading_family"])
 
-    possible_families = result.get("possible_families") or []
-    if len(possible_families) > 1:
-        print("Possible Families: %s" % ", ".join(possible_families))
+    print("Score: %.3f / %.3f" % (result["score"], result["threshold"]))
 
-    print("Score:   %.3f" % result["score"])
-    print("Threshold:   %.3f" % result["threshold"])
-    print("Events:   %s" % result["events_processed"])
-
-    if result.get("process"):
-        print("Process: %s (pid %s)" % (result["process"], result["pid"]))
-
-    if result.get("family_scores"):
-        print("Family Scores:")
-        for family, score in result["family_scores"].items():
-            print(" %-10s %.3f" % (family,score))
-
-    if result.get("evidence"):
-        print("Evidence:")
-        for item in result["evidence"]:
-            print("  - %-29s %s" % (item["indicator"], item["description"]))
-
+    print("Events processed: %s" % result["events_processed"])
 
 def main(argv=None) -> int:
     arg_parser = argparse.ArgumentParser(description="Analyse normalised Sysmon telemetry")

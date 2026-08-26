@@ -39,7 +39,7 @@ def formatHumanReadable(result):
 
     if family_scores:
         score_parts = [f"{name}: {value}" for name, value in family_scores.items()]
-        lines.append(f"Familiy scores: {', '.join(score_parts)}")
+        lines.append(f"Family scores: {', '.join(score_parts)}")
     lines.append("")
 
     if not evidence:
