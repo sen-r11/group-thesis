@@ -53,9 +53,37 @@ RED = "\x1b[31m"
 YELLOW = "\x1b[33m"
 
 
+# Set to True by PyInstaller in a packed build
+FROZEN = getattr(sys, "frozen", False)
+
+# The launcher sets this to the subcommand name, so that asking for
+# administrator rights can start the same command again
+COMMAND_PREFIX = []
+
+
 def say(text=""):
     with OUTPUT_LOCK:
         print(text)
+
+
+def app_dir():
+    # Where the program lives. In a packed build __file__ points inside a
+    # temporary unpack folder, so the exe's own folder is the useful one.
+    if FROZEN:
+        return os.path.dirname(os.path.abspath(sys.executable))
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+def bundled(name):
+    # A data file packed into the exe is unpacked beside the code, so look
+    # there first, then next to the exe, then take the name as given
+    base = getattr(sys, "_MEIPASS", None)
+    if base and os.path.isfile(os.path.join(base, name)):
+        return os.path.join(base, name)
+    beside = os.path.join(app_dir(), name)
+    if os.path.isfile(beside):
+        return beside
+    return name
 
 
 # ---------------------------------------------------------------- elevation
@@ -67,10 +95,17 @@ def is_admin():
         return False
 
 
-def relaunch_elevated(argv):
-    script = os.path.abspath(__file__)
-    workdir = os.path.dirname(script)
-    arguments = subprocess.list2cmdline([script] + list(argv) + ["--elevated"])
+def relaunch_elevated(argv, script=None):
+    # A packed build starts itself. A script build starts Python on the
+    # script, so the two need different command lines.
+    if FROZEN:
+        workdir = app_dir()
+        arguments = subprocess.list2cmdline(
+            list(COMMAND_PREFIX) + list(argv) + ["--elevated"])
+    else:
+        script = os.path.abspath(script or __file__)
+        workdir = os.path.dirname(script)
+        arguments = subprocess.list2cmdline([script] + list(argv) + ["--elevated"])
 
     say("The Sysmon channel needs administrator rights.")
     say("Asking Windows for them. Answer the prompt to continue.")
@@ -153,7 +188,7 @@ def find_sysmon():
     directories = [
         system_root,
         os.path.join(system_root, "System32"),
-        os.path.dirname(os.path.abspath(__file__)),
+        app_dir(),
         os.getcwd(),
     ]
     for directory in directories:
@@ -690,6 +725,22 @@ def show_alert(alert, human):
 
 # --------------------------------------------------------------- the capture
 
+def replay_events(path, speed):
+    # Feed a recording to the engine in the order it was recorded. At speed 0
+    # the events arrive as fast as the file reads, which is what a test wants.
+    # Above 0 the gaps between them are honoured, divided by the speed, so
+    # the view behaves the way it did when the events happened.
+    previous = None
+    for event in parse.open_file(path):
+        stamp = float(event.get("time") or 0.0)
+        if speed > 0 and previous is not None:
+            gap = (stamp - previous) / speed
+            if 0 < gap < 60:
+                time.sleep(gap)
+        previous = stamp
+        yield event
+
+
 def capture(args):
     formatters = load_formatter()
     human = formatters[0] if formatters else None
@@ -698,16 +749,31 @@ def capture(args):
     engine = DetectionEngine(threshold=args.threshold)
     view = LiveView(engine, args.threshold)
     last_alert = {}
-    last_decay = time.time()
+
+    replaying = bool(getattr(args, "replay", None))
+    # Eviction, decay and re-arming all measure elapsed time. Live, that is
+    # the wall clock. Replaying a recording, the wall clock stands still
+    # while the events span hours, so every process would look stale at once
+    # and be evicted. The events carry their own clock, so replay uses it.
+    clock = 0.0
+    last_decay = 0.0
 
     out = open(args.out, "a", encoding="utf-8") if args.out else None
 
     say("=" * WIDTH)
-    say(" Live detection on Microsoft-Windows-Sysmon/Operational")
+    if replaying:
+        say(" Replaying %s" % os.path.abspath(args.replay))
+    else:
+        say(" Live detection on Microsoft-Windows-Sysmon/Operational")
     say("=" * WIDTH)
     say(" threshold  %.2f" % args.threshold)
-    say(" stopping   %s" % ("after %s" % duration(args.seconds)
-                            if args.seconds else "on Ctrl+C"))
+    if replaying:
+        say(" feeding    the recorded events in order, %s"
+            % ("as fast as they read" if args.speed <= 0
+               else "at %g times the speed they happened" % args.speed))
+    else:
+        say(" stopping   %s" % ("after %s" % duration(args.seconds)
+                                if args.seconds else "on Ctrl+C"))
     if out:
         say(" alerts to  %s" % os.path.abspath(args.out))
     say(" evicting   quiet processes after %s" % duration(args.evict_after))
@@ -717,7 +783,12 @@ def capture(args):
         if args.investigate else "nothing. Every alert is reported."))
     say("=" * WIDTH)
     say("")
-    say("Waiting for events. Only activity from now on is recorded.")
+    if replaying:
+        say("The engine sees these events exactly as it would see them live.")
+        if args.investigate:
+            say("The programs are checked on this machine, not the recorded one.")
+    else:
+        say("Waiting for events. Only activity from now on is recorded.")
     say("")
 
     screen = None
@@ -729,15 +800,23 @@ def capture(args):
     if args.status_every > 0:
         view.run_status_thread(args.status_every, stop, screen)
 
+    if replaying:
+        stream = replay_events(args.replay, args.speed)
+    else:
+        stream = parse.from_live(seconds=args.seconds)
+
     try:
-        for event in parse.from_live(seconds=args.seconds):
+        for event in stream:
             view.record(event)
+            clock = float(event.get("time") or 0.0) if replaying else time.time()
+            if not last_decay:
+                last_decay = clock
 
             for alert in engine.process_event(event):
                 # The engine builds an alert without this count and the
                 # formatter prints it, so supply it here
                 alert["events_processed"] = engine.events_processed
-                last_alert[(alert["pid"], alert["family"])] = time.time()
+                last_alert[(alert["pid"], alert["family"])] = clock
 
                 if args.investigate:
                     worth_reporting, report = investigate.judge(
@@ -769,11 +848,10 @@ def capture(args):
                     out.flush()
 
             if view.events % PRUNE_EVERY == 0:
-                now = time.time()
-                view.evicted += prune_state(engine, now, args.evict_after)
-                rearm(engine, last_alert, now, args.rearm_after)
-                decay_scores(engine, now - last_decay, args.decay_halflife)
-                last_decay = now
+                view.evicted += prune_state(engine, clock, args.evict_after)
+                rearm(engine, last_alert, clock, args.rearm_after)
+                decay_scores(engine, clock - last_decay, args.decay_halflife)
+                last_decay = clock
 
     except KeyboardInterrupt:
         pass
@@ -868,6 +946,12 @@ def main(argv=None):
         "--status-every", type=float, default=DEFAULT_STATUS_EVERY,
         help="seconds between screen refreshes. 0 turns them off")
     arg_parser.add_argument(
+        "--replay", metavar="FILE",
+        help="feed a recorded capture through the live path instead of the channel")
+    arg_parser.add_argument(
+        "--speed", type=float, default=0.0,
+        help="replay pacing. 0 is as fast as it reads, 1 is the speed it happened")
+    arg_parser.add_argument(
         "--plain", action="store_true",
         help="scroll the status instead of redrawing a screen in place")
     arg_parser.add_argument(
@@ -894,13 +978,21 @@ def main(argv=None):
     code = 0
     try:
         if args.check:
-            return report_machine(args.config)
+            return report_machine(bundled(args.config))
+
+        # A recording needs no channel, so replay wants neither Sysmon nor
+        # administrator rights and runs on any machine
+        if args.replay:
+            if not os.path.isfile(args.replay):
+                print("error: no capture at %s" % args.replay, file=sys.stderr)
+                return 2
+            return capture(args)
 
         if not is_admin():
             return relaunch_elevated([a for a in argv if a != "--elevated"])
 
         if args.setup:
-            return setup_sysmon(args.config, args.yes)
+            return setup_sysmon(bundled(args.config), args.yes)
 
         problems = check_machine()
         if problems:

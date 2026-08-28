@@ -12,6 +12,11 @@ logs/
 # real host paths and user names, and samples must never leave the VM.
 samples/
 captures/
+
+# what build.py produces
+build/
+dist/
+*.spec
 live_alerts.jsonl
 
 .VSCodeCounter/**
