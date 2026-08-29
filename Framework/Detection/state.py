@@ -149,13 +149,19 @@ class StateStore:
         seen: Set[int] = {current.pid}
 
         for _hop in range(self.MAX_HOPS):
-            if process_name(current.process) not in self.HELPERS:
-                break
             if not current.ppid or current.ppid in seen:
                 break
 
             parent = self.processes.get(current.ppid)
             if parent is None or process_name(parent.process) in self.LAUNCHERS:
+                break
+
+            # A copy a program starts of itself is the same program, so its
+            # findings belong with the original. Without this a sample that
+            # restarts itself spreads its evidence over a pid apiece and none
+            # of them holds enough to report
+            same_image = process_name(current.process) == process_name(parent.process)
+            if not same_image and process_name(current.process) not in self.HELPERS:
                 break
 
             seen.add(current.pid)
