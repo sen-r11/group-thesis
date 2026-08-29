@@ -192,10 +192,6 @@ def calculate_metrics(results):
     }
 
 
-
-
-
-
 def print_summary(metrics):
     print("\n=== Evaluation Results ===")
 

@@ -29,20 +29,8 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
     if not registry:
         return []
     
-    matched_standard = any(
-        key in registry
-          for key in PERSISTENCE_KEYS
-          )
-
-    matched_service = (
-        SERVICE_ROOT in registry
-        and any(
-            value in registry
-            for value in SERVICE_PERSISTENCE_VALUES
-        )
-    )
-
-    if not matched_standard and not matched_service:
+    matched = any(key in registry for key in PERSISTENCE_KEYS)
+    if not matched:
         return []
     
     root_pid = store.attribution_state(direct_state.pid).pid
