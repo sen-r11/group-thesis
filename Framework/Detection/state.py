@@ -7,6 +7,11 @@ from typing import Deque, Dict, Iterable, List, Optional, Set, Tuple
 
 FAMILIES = ("ransomware", "spyware", "rat")
 
+
+def process_name(path: str) -> str:
+    return str(path or "").replace("/", "\\").lower().split("\\")[-1]
+
+
 @dataclass
 class Evidence:
     indicator: str
@@ -50,6 +55,25 @@ class StateStore:
 
     HISTORY_SECONDS = 60.0
 
+    # Utilities malware drives to do its work. What one of these does belongs
+    # to whatever launched it, not to the utility
+    HELPERS = {
+        "cmd.exe", "powershell.exe", "pwsh.exe", "wscript.exe", "cscript.exe",
+        "mshta.exe", "rundll32.exe", "regsvr32.exe", "conhost.exe",
+        "taskkill.exe", "net.exe", "net1.exe", "sc.exe", "reg.exe",
+        "schtasks.exe", "vssadmin.exe", "wmic.exe", "bitsadmin.exe",
+        "certutil.exe", "attrib.exe", "icacls.exe", "wevtutil.exe",
+    }
+
+    # Windows starts nearly everything from these, so a finding that moved into
+    # one would put the whole machine under a single process
+    LAUNCHERS = {
+        "explorer.exe", "services.exe", "svchost.exe", "winlogon.exe",
+        "wininit.exe", "userinit.exe", "runtimebroker.exe", "system",
+    }
+
+    MAX_HOPS = 4
+
     def __init__(self) -> None:
         self.processes: Dict[int, ProcessState] = {}
 
@@ -68,6 +92,13 @@ class StateStore:
     def observe(self, event: Dict[str,object]) -> ProcessState:
         pid = int(event.get("pid") or 0)
         process = str(event.get("process") or "unknown")
+
+        # Windows gives a PID back out once the process using it ends, so a
+        # process start always begins a new record. Without this a new process
+        # inherits the history and the scores of the dead one that had its PID
+        if int(event.get("event_id") or 0) == 1:
+            self.processes.pop(pid, None)
+
         state = self.ensure(pid, process)
 
         now = float(event.get("time") or 0.0)
@@ -111,15 +142,23 @@ class StateStore:
             state.registry_events.popleft()
 
     def attribution_state(self, pid: int) -> ProcessState:
-        #Roll a child action up to the highest process seen in the same tree
+        # The process that acted keeps its own finding. Only a utility hands
+        # the finding to whatever launched it, and only for a few steps, so a
+        # dropper is still credited for what it told a shell to do
         current = self.ensure(pid)
-        seen: Set[int] = set()
+        seen: Set[int] = {current.pid}
 
-        while current.ppid and current.ppid not in seen:
-            seen.add(current.pid)
-            parent = self.processes.get(current.ppid)
-            if parent is None:
+        for _hop in range(self.MAX_HOPS):
+            if process_name(current.process) not in self.HELPERS:
                 break
+            if not current.ppid or current.ppid in seen:
+                break
+
+            parent = self.processes.get(current.ppid)
+            if parent is None or process_name(parent.process) in self.LAUNCHERS:
+                break
+
+            seen.add(current.pid)
             current = parent
 
         return current
@@ -127,11 +166,17 @@ class StateStore:
     def children_of(self, pid: int) -> Iterable[ProcessState]:
         return (state for state in self.processes.values() if state.ppid == pid)
     
-    def process_tree(self, root_pid: int) -> Dict[str, object]:
+    def process_tree(self, root_pid: int, seen: Optional[Set[int]] = None) -> Dict[str, object]:
+        # A reused PID can leave a parent pointing back into its own branch, so
+        # each process is only put in the tree once
+        seen = set() if seen is None else seen
         root = self.ensure(root_pid)
+        seen.add(root.pid)
+        children = [child.pid for child in list(self.children_of(root.pid))
+                    if child.pid not in seen]
         return {
             "pid": root.pid,
             "process": root.process,
-            "children": [self.process_tree(child.pid) for child in self.children_of(root.pid)],
+            "children": [self.process_tree(pid, seen) for pid in children],
         }
 

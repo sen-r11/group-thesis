@@ -11,3 +11,11 @@ from Detection.indicators.rules.process_injection import detect as process_injec
 from Detection.indicators.rules.process_tampering import detect as process_tampering
 from Detection.indicators.rules.suspicious_network import detect as suspicious_network
 from Detection.indicators.rules.suspicious_dns import detect as suspicious_dns
+
+# RAT indicators (Kai), sections 2.7.4 to 2.7.7
+from Detection.indicators.rules.rat_beacon import detect as rat_beacon
+from Detection.indicators.rules.rat_scheduled_task import detect as rat_scheduled_task
+from Detection.indicators.rules.rat_named_pipe import detect as rat_named_pipe
+from Detection.indicators.rules.rat_privileged_access import detect as rat_privileged_access
+from Detection.indicators.rules.rat_dns_fanout import detect as rat_dns_fanout
+from Detection.indicators.rules.rat_remote_shell import detect as rat_remote_shell

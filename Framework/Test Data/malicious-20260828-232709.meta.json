@@ -1,0 +1,21 @@
+{
+  "sample_id": "malicious-20260828-232709",
+  "label": "malicious",
+  "family": "rat",
+  "note": "RemcosRAT + 2 other RATs",
+  "collected": "2026-08-28T23:27:09",
+  "mode": "live 900s",
+  "machine": "WIN11",
+  "events": 235023,
+  "event_counts": {
+    "1": 136,
+    "3": 341,
+    "10": 230183,
+    "11": 395,
+    "13": 3524,
+    "17": 69,
+    "18": 87,
+    "22": 62,
+    "23": 226
+  }
+}

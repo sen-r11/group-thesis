@@ -1,0 +1,21 @@
+{
+  "sample_id": "malicious-20260828-232725",
+  "label": "malicious",
+  "family": "ransomware",
+  "note": "CRPx0_RANSOMWARE",
+  "collected": "2026-08-28T23:27:25",
+  "mode": "live 300s",
+  "machine": "WIN11",
+  "events": 14075,
+  "event_counts": {
+    "1": 596,
+    "3": 149,
+    "10": 9157,
+    "11": 2320,
+    "13": 1480,
+    "17": 51,
+    "18": 55,
+    "22": 31,
+    "23": 236
+  }
+}

@@ -12,6 +12,12 @@ from Detection.indicators.rules import (
     process_tampering,
     suspicious_network,
     suspicious_dns,
+    rat_beacon,
+    rat_scheduled_task,
+    rat_named_pipe,
+    rat_privileged_access,
+    rat_dns_fanout,
+    rat_remote_shell,
 )
 
 DETECTORS = [
@@ -26,4 +32,10 @@ DETECTORS = [
     process_tampering,
     suspicious_network,
     suspicious_dns,
+    rat_beacon,
+    rat_scheduled_task,
+    rat_named_pipe,
+    rat_privileged_access,
+    rat_dns_fanout,
+    rat_remote_shell,
 ]
