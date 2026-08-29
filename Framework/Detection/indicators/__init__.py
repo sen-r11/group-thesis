@@ -21,6 +21,8 @@ from Detection.indicators.rules import (
     rat_uac_bypass,
     rat_host_discovery,
     spyware_collection,
+    self_replication,
+    staging_drop,
 )
 
 DETECTORS = [
@@ -44,4 +46,6 @@ DETECTORS = [
     rat_uac_bypass,
     rat_host_discovery,
     spyware_collection,
+    self_replication,
+    staging_drop,
 ]
