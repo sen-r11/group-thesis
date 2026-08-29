@@ -1,0 +1,9 @@
+# One line ending for source, so a checkout does not rewrite every line
+* text=auto eol=lf
+
+# Captures are data. Leave their bytes alone and keep them out of diffs
+*.jsonl -text -diff
+
+*.evtx binary
+*.exe  binary
+*.zip  binary

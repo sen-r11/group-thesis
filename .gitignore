@@ -19,4 +19,7 @@ dist/
 *.spec
 live_alerts.jsonl
 
+# engine output, not source
+/Framework/result.json
+
 .VSCodeCounter/**
