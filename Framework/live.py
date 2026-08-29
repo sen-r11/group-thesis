@@ -37,6 +37,10 @@ DEFAULT_REARM_AFTER = 300.0
 DEFAULT_DECAY_HALFLIFE = 600.0
 DEFAULT_STATUS_EVERY = 1.0
 PRUNE_EVERY = 500
+# A replay skips a gap longer than this rather than sit through it, and
+# does not bother sleeping for one shorter than the timer can hold
+REPLAY_MAX_GAP = 60.0
+REPLAY_MIN_SLEEP = 0.001
 SILENT_AFTER = 60.0
 WATCHING_SHOWN = 5
 
@@ -728,16 +732,39 @@ def show_alert(alert, human):
 def replay_events(path, speed):
     # Feed a recording to the engine in the order it was recorded. At speed 0
     # the events arrive as fast as the file reads, which is what a test wants.
-    # Above 0 the gaps between them are honoured, divided by the speed, so
-    # the view behaves the way it did when the events happened.
+    # Above 0 the recorded clock is honoured, divided by the speed, so the
+    # view behaves the way it did when the events happened.
+    #
+    # Waiting out one gap at a time looks simpler and runs long. Windows wakes
+    # a sleeping thread about half a millisecond late, most of the gaps in a
+    # capture are shorter than that, and the miss lands on every event: a
+    # five minute capture takes six. So each event is timed against the start
+    # of the replay, which leaves the error on the event it happened to and
+    # keeps it off the ones that follow.
+    first = None
+    started = None
     previous = None
+    skipped = 0.0
     for event in parse.open_file(path):
         stamp = float(event.get("time") or 0.0)
-        if speed > 0 and previous is not None:
-            gap = (stamp - previous) / speed
-            if 0 < gap < 60:
-                time.sleep(gap)
-        previous = stamp
+        # An event with no clock cannot be placed, so it is passed straight
+        # through and the pacing carries on from the last one that had one
+        if speed > 0 and stamp:
+            if first is None:
+                first = stamp
+                started = time.monotonic()
+            else:
+                # Dead air is not worth sitting through. Drop the wait, and
+                # take it off the clock so the rest still arrives on time
+                if stamp - previous >= REPLAY_MAX_GAP:
+                    skipped += stamp - previous
+                due = started + (stamp - first - skipped) / speed
+                waiting = due - time.monotonic()
+                # Under the floor the sleep would overshoot more than it
+                # waits, and behind schedule there is nothing to wait for
+                if waiting >= REPLAY_MIN_SLEEP:
+                    time.sleep(waiting)
+            previous = stamp
         yield event
 
 
@@ -977,8 +1004,8 @@ def main(argv=None):
         "--replay", metavar="FILE",
         help="feed a recorded capture through the live path instead of the channel")
     arg_parser.add_argument(
-        "--speed", type=float, default=0.0,
-        help="replay pacing. 0 is as fast as it reads, 1 is the speed it happened")
+        "--speed", type=float, default=1.0,
+        help="replay pacing. 1 is the speed it happened, 0 is as fast as it reads")
     arg_parser.add_argument(
         "--plain", action="store_true",
         help="scroll the status instead of redrawing a screen in place")
