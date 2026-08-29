@@ -31,7 +31,8 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
         return []
 
     root_pid = store.attribution_state(direct_state.pid).pid
-    names = rat_history.record_dns(store, root_pid, event.get("time") or 0.0, name)
+    names = rat_history.record_dns(
+        store, event.get("process"), event.get("time") or 0.0, name)
 
     if len(names) < DISTINCT_NAME_THRESHOLD:
         return []

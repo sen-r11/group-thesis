@@ -7,6 +7,24 @@ from Detection.state import ProcessState, StateStore
 
 NETWORK_WINDOW = 300.0
 
+# Commands that switch protection off or destroy the copies a machine is
+# restored from. Ransomware runs a long burst of these before it encrypts,
+# so they say more about the family than about a remote operator
+DESTRUCTIVE = (
+    "taskkill",
+    "sc stop",
+    "sc delete",
+    "sc config",
+    "net stop",
+    "vssadmin",
+    "wbadmin",
+    "bcdedit",
+    "shadowcopy",
+    "shadowstorage",
+    "mpcmdrun",
+    "wevtutil cl",
+)
+
 # The shell, and the command line words that mean it runs one command and
 # exits. A person opening a terminal starts a shell with no command.
 SHELLS = {
@@ -54,16 +72,24 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
         return []
 
     root_pid = store.attribution_state(direct_state.pid).pid
+    destructive = any(word in cmdline for word in DESTRUCTIVE)
+
+    if destructive:
+        indicator = "defence_evasion_command"
+        description = "Process ran a shell command that turns off protection or destroys recovery data"
+        weights = {"ransomware": 0.30, "spyware": 0.05, "rat": 0.05}
+    else:
+        indicator = "remote_command_execution"
+        description = "Network-active process ran a one-shot shell command"
+        weights = {"spyware": 0.10, "rat": 0.40}
+
     return [
         Finding(
-            indicator="remote_command_execution",
-            description="Network-active process ran a one-shot shell command",
-            weights={
-                "spyware": 0.10,
-                "rat": 0.40,
-            },
+            indicator=indicator,
+            description=description,
+            weights=weights,
             fingerprint=f"remote_shell:{root_pid}:{child}:{cmdline[:80]}",
-            score_key=f"remote_shell:{root_pid}",
+            score_key=f"remote_shell:{indicator}:{root_pid}",
             details={
                 "parent": parent.process,
                 "shell": child,
