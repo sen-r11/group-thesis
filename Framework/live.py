@@ -741,6 +741,26 @@ def replay_events(path, speed):
         yield event
 
 
+# The detector shows up in the channel it is reading: the process it runs in,
+# and the helpers it starts to check a program on disk. Judging that work would
+# report the tool doing the reporting, so it is dropped before anything sees it
+def own_work(event, mine):
+    pid = int(event.get("pid") or 0)
+
+    ppid = event.get("ppid")
+    if isinstance(ppid, str) and ppid.isdigit():
+        ppid = int(ppid)
+
+    # Anything the detector starts belongs to the detector as well
+    if int(event.get("event_id") or 0) == 1 and ppid in mine:
+        mine.add(pid)
+        return True
+
+    # Only the process acting is skipped. Another process opening the detector
+    # is worth seeing, and that event is recorded against the one opening it
+    return pid in mine
+
+
 def capture(args):
     formatters = load_formatter()
     human = formatters[0] if formatters else None
@@ -759,6 +779,11 @@ def capture(args):
     last_decay = 0.0
 
     out = open(args.out, "a", encoding="utf-8") if args.out else None
+
+    # Live, these are the PIDs of this program and whatever it starts. A
+    # recording is someone else's machine, where the same numbers mean other
+    # processes, so nothing is skipped while replaying
+    mine = {os.getpid()}
 
     say("=" * WIDTH)
     if replaying:
@@ -807,6 +832,9 @@ def capture(args):
 
     try:
         for event in stream:
+            if not replaying and own_work(event, mine):
+                continue
+
             view.record(event)
             clock = float(event.get("time") or 0.0) if replaying else time.time()
             if not last_decay:
