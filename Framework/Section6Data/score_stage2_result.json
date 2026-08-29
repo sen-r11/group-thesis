@@ -1,0 +1,60 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "rat",
+  "possible_families": [],
+  "score": 0.35,
+  "threshold": 0.7,
+  "events_processed": 3,
+  "pid": 4404,
+  "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+  "family_scores": {
+    "ransomware": 0.1,
+    "spyware": 0.25,
+    "rat": 0.35
+  },
+  "triggered_indicators": [
+    "suspicious_dns",
+    "suspicious_network_connection"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1785230403.441,
+      "event_id": 22,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+        "dns": "updates.example-cdn.net"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1785230403.902,
+      "event_id": 3,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+        "destination": "203.0.113.7",
+        "port": 8443
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.15,
+        "rat": 0.2
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 4404,
+    "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+    "children": []
+  }
+}

@@ -31,6 +31,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
                 "ransomware": 0.20,
             },
             fingerprint=f"file_deletion:{root_pid}",
+            score_key=f"file_activity_burst:{root_pid}",
             details={
                 "deletion_count": len(recent_deletions),
                 "window_seconds": WINDOW_SECONDS,

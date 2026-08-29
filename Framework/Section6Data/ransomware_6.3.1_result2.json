@@ -1,0 +1,2650 @@
+{
+  "verdict": "malicious",
+  "family": "ransomware",
+  "leading_family": "ransomware",
+  "possible_families": [
+    "ransomware",
+    "rat"
+  ],
+  "score": 0.7,
+  "threshold": 0.7,
+  "events_processed": 14075,
+  "pid": 4552,
+  "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+  "family_scores": {
+    "ransomware": 0.7,
+    "spyware": 0.4,
+    "rat": 0.6
+  },
+  "triggered_indicators": [
+    "process_access",
+    "suspicious_process_spawn",
+    "suspicious_dns",
+    "scheduled_task_persistence",
+    "shadow_copy_deletion",
+    "suspicious_process_spawn"
+  ],
+  "evidence": [
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787956148.70962,
+      "event_id": 10,
+      "process": "C:\\WINDOWS\\system32\\conhost.exe",
+      "details": {
+        "process": "C:\\WINDOWS\\system32\\conhost.exe",
+        "target": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956151.035178,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"ver\""
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1787956151.19822,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+      "details": {
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "dns": "ip-api.com"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "scheduled_task_persistence",
+      "description": "Process created a scheduled task or a service, which survives a restart",
+      "time": 1787956152.842988,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\schtasks.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\schtasks.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "schtasks  /create /f /sc onlogon /tn \"OneDrive Sync Maintenance\" /tr \"\\\"C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe\\\" \\\"C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\sys_service.py\\\" bootstrap_done\"",
+        "tool": "schtasks.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.2,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "shadow_copy_deletion",
+      "description": "Process attempted to delete Windows shadow copies",
+      "time": 1787956232.988465,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\vssadmin.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "command_line": "vssadmin  delete shadows /all /quiet"
+      },
+      "weights": {
+        "ransomware": 0.4
+      }
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956232.988465,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\vssadmin.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "vssadmin  delete shadows /all /quiet"
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 4552,
+    "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+    "children": [
+      {
+        "pid": 10280,
+        "process": "C:\\WINDOWS\\system32\\conhost.exe",
+        "children": []
+      },
+      {
+        "pid": 8440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11592,
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "children": []
+      },
+      {
+        "pid": 10776,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4140,
+            "process": "C:\\Windows\\System32\\schtasks.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9360,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2924,
+            "process": "C:\\WINDOWS\\system32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9312,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9944,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7400,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7844,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2536,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7832,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10568,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11740,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8272,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4160,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2460,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11272,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5780,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2140,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11344,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 2288,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3828,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9988,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5508,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9116,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12260,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3988,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1104,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11872,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11552,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6592,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10136,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3848,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10444,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4432,
+            "process": "C:\\WINDOWS\\system32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6840,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11036,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 4368,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9024,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12064,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11160,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8372,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9380,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11256,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9792,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 1980,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11260,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6032,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11308,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9492,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12160,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9348,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11868,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1560,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12012,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2116,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11396,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11104,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7028,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11580,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10244,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5000,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5464,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": [
+              {
+                "pid": 120,
+                "process": "C:\\WINDOWS\\SysWOW64\\tar.exe",
+                "children": [
+                  {
+                    "pid": 11020,
+                    "process": "C:\\WINDOWS\\system32\\conhost.exe",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "pid": 11380,
+                "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+                "children": [
+                  {
+                    "pid": 8504,
+                    "process": "C:\\WINDOWS\\system32\\cmd.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10876,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3164,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1276,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10992,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10388,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 8608,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3136,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11920,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11472,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11504,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11028,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8908,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10404,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10504,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 10572,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11648,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12192,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9428,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9824,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7192,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3628,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3876,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11748,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10384,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3764,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2732,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 7216,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11452,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11680,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11424,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9048,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7084,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11652,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12120,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1404,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 452,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 4092,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10872,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1620,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5792,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1392,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4648,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11200,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10576,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10528,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3872,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11304,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5600,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10496,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5704,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 9808,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9452,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11128,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9644,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9624,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10624,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 7776,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1264,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10612,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6808,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10552,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 600,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 12252,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4620,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9356,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9704,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1124,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3680,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10236,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11352,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12164,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10492,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1444,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 11688,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5832,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10512,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10128,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9868,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11368,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7240,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3256,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11196,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10376,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6380,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4428,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11544,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8524,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11144,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4592,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9176,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 3560,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 596,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 12116,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11820,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 6960,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4008,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9604,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10856,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10440,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3840,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6156,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10028,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8796,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10292,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11928,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 7756,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8900,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9688,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 6076,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9384,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3220,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11992,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 8476,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3768,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10312,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9588,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11532,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 508,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3880,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6664,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11108,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3412,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9600,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1584,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5260,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9252,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10416,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11204,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11640,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3224,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11520,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9696,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11780,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9556,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5916,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9304,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8172,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8388,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6296,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3144,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 10264,
+                "process": "C:\\WINDOWS\\system32\\conhost.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8088,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2900,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 3892,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4084,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5216,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10796,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7096,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10156,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3104,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10508,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10724,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 7660,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10048,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7948,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11512,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9972,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12180,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 628,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 9396,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1772,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 10480,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 4460,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10732,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11092,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6492,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11324,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 2276,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10016,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9180,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9192,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 692,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9420,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12104,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10788,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 5032,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 6088,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 4464,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12188,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 96,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2712,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 644,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12140,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8656,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 7636,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9796,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 9424,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2740,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4444,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 608,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10396,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11584,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 9860,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8500,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11480,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5204,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10228,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12088,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11216,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4088,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11420,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10792,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10060,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10224,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5156,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7148,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9640,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6320,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11116,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2608,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10368,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 3416,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12212,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7368,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11348,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11372,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10172,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1464,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9540,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9576,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12128,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 12256,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9548,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 11300,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7484,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4248,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4040,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1544,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11172,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 3808,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11052,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3656,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11784,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 4548,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9960,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 540,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5068,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11432,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9168,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7552,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10500,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10764,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          },
+          {
+            "pid": 5812,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9564,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10232,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3824,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 6340,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7732,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9788,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 6720,
+                "process": "C:\\WINDOWS\\system32\\net.exe",
+                "children": [
+                  {
+                    "pid": 9968,
+                    "process": "C:\\Windows\\System32\\net1.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7780,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4232,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2916,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 392,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11184,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11100,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9804,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2796,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11084,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11884,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9436,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7956,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6392,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10772,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8260,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5740,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8508,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1672,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11232,
+                    "process": "C:\\WINDOWS\\system32\\net.exe",
+                    "children": [
+                      {
+                        "pid": 9948,
+                        "process": "C:\\Windows\\System32\\net1.exe",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5256,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1260,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10456,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7520,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1220,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1052,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 12000,
+                    "process": "C:\\Windows\\System32\\net1.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11760,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11468,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2928,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11056,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11024,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11716,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4044,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1880,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12016,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9488,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 5056,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 4888,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 7692,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10912,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4500,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11072,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 8076,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9904,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9648,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5492,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3592,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1240,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 11668,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8784,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10812,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 4932,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 1524,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12232,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 1824,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12172,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8080,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1324,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9608,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9464,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9068,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1688,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11852,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11060,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5860,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 4024,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9052,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 11156,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9828,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10348,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10760,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7608,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 12220,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8228,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9484,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11488,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5284,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8556,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11228,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1416,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8344,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9572,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9476,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11932,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12268,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10032,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5804,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 12272,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11400,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8812,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5752,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12168,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10324,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 1296,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3108,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 10356,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 1236,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9256,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9388,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 808,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9884,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9900,
+            "process": "C:\\Windows\\System32\\vssadmin.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10180,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11676,
+            "process": "C:\\Windows\\System32\\wbadmin.exe",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

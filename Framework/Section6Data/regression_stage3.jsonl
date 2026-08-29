@@ -1,0 +1,4 @@
+{"kind": "host", "event_id": 1, "time": 1785230400.123456, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "cmdline": "\"C:\\Users\\kai\\Downloads\\invoice.exe\"", "ppid": 812, "parent": "C:\\Windows\\explorer.exe"}
+{"kind": "host", "event_id": 22, "time": 1785230403.441, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "dns": "updates.example-cdn.net"}
+{"kind": "host", "event_id": 3, "time": 1785230403.902, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "dest": "203.0.113.7", "port": "8443"}
+{"kind": "host", "event_id": 13, "time": 1785230405.267, "pid": 4404, "process": "C:\\Users\\kai\\Downloads\\invoice.exe", "registry": "HKU\\S-1-5-21-1004\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater", "detail": "C:\\Users\\kai\\AppData\\Roaming\\updater.exe"}

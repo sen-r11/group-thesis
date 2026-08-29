@@ -1,0 +1,119 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "ransomware",
+  "possible_families": [],
+  "score": 0.65,
+  "threshold": 0.7,
+  "events_processed": 27428,
+  "pid": 7888,
+  "process": "C:\\Windows\\Explorer.EXE",
+  "family_scores": {
+    "ransomware": 0.65,
+    "spyware": 0.2,
+    "rat": 0.35
+  },
+  "triggered_indicators": [
+    "process_access",
+    "rapid_file_activity",
+    "file_deletion_burst",
+    "suspicious_process_spawn"
+  ],
+  "evidence": [
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787970777.538172,
+      "event_id": 10,
+      "process": "C:\\Windows\\Explorer.EXE",
+      "details": {
+        "process": "C:\\Windows\\Explorer.EXE",
+        "target": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2606.15.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe"
+      },
+      "weights": {
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "rapid_file_activity",
+      "description": "Process performed a large number of file operations in a short time period",
+      "time": 1787970830.92555,
+      "event_id": 11,
+      "process": "C:\\Windows\\Explorer.EXE",
+      "details": {
+        "event_count": 5,
+        "window_seconds": 10.0,
+        "process": "C:\\Windows\\Explorer.EXE"
+      },
+      "weights": {
+        "ransomware": 0.3
+      }
+    },
+    {
+      "indicator": "file_deletion_burst",
+      "description": "Process deleted multiple files within a short time period",
+      "time": 1787970836.038816,
+      "event_id": 23,
+      "process": "C:\\Windows\\Explorer.EXE",
+      "details": {
+        "deletion_count": 4,
+        "window_seconds": 10.0,
+        "process": "C:\\Windows\\Explorer.EXE"
+      },
+      "weights": {
+        "ransomware": 0.2
+      }
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787970893.309685,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Windows\\explorer.exe",
+        "command_line": "\"C:\\Windows\\system32\\cmd.exe\" "
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 7888,
+    "process": "C:\\Windows\\Explorer.EXE",
+    "children": [
+      {
+        "pid": 76228,
+        "process": "C:\\Windows\\system32\\taskmgr.exe",
+        "children": [
+          {
+            "pid": 5376,
+            "process": "C:\\Windows\\system32\\taskmgr.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 76580,
+        "process": "C:\\Windows\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 76160,
+            "process": "C:\\Windows\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 76136,
+            "process": "C:\\Windows\\System32\\nslookup.exe",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

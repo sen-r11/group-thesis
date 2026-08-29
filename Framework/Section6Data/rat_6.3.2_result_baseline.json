@@ -1,0 +1,255 @@
+{
+  "verdict": "malicious",
+  "family": "ransomware",
+  "leading_family": "ransomware",
+  "possible_families": [
+    "ransomware",
+    "rat"
+  ],
+  "score": 0.9,
+  "threshold": 0.7,
+  "events_processed": 235023,
+  "pid": 8908,
+  "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+  "family_scores": {
+    "ransomware": 0.9,
+    "spyware": 0.65,
+    "rat": 0.85
+  },
+  "triggered_indicators": [
+    "rapid_file_activity",
+    "registry_persistence",
+    "suspicious_process_spawn",
+    "process_access",
+    "scheduled_task_persistence",
+    "scheduled_task_persistence",
+    "suspicious_dns",
+    "file_deletion_burst"
+  ],
+  "evidence": [
+    {
+      "indicator": "rapid_file_activity",
+      "description": "Process performed a large number of file operations in a short time period",
+      "time": 1787956182.229824,
+      "event_id": 23,
+      "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+      "details": {
+        "event_count": 5,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe"
+      },
+      "weights": {
+        "ransomware": 0.3
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787956182.458719,
+      "event_id": 13,
+      "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+      "details": {
+        "registry": "HKU\\S-1-5-21-3668069402-3471658256-2792720188-1000\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsUpdate",
+        "detail": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956182.485117,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c schtasks /create /tn \"WindowsUpdateTask\" /tr \"C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe\" /sc onlogon /f >nul 2>&1"
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787956182.485173,
+      "event_id": 10,
+      "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+      "details": {
+        "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+        "target": "C:\\WINDOWS\\system32\\cmd.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "scheduled_task_persistence",
+      "description": "Process created a scheduled task or a service, which survives a restart",
+      "time": 1787956182.750082,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\schtasks.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\schtasks.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "schtasks  /create /tn \"WindowsUpdateTask\" /tr \"C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe\" /sc onlogon /f ",
+        "tool": "schtasks.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.2,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "scheduled_task_persistence",
+      "description": "Process created a scheduled task or a service, which survives a restart",
+      "time": 1787956183.196703,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\sc.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\sc.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "sc  config DiagTrack start= disabled ",
+        "tool": "sc.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1787956184.305564,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+      "details": {
+        "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+        "dns": "wilsonrat.top"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "file_deletion_burst",
+      "description": "Process deleted multiple files within a short time period",
+      "time": 1787956187.272325,
+      "event_id": 23,
+      "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+      "details": {
+        "deletion_count": 4,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe"
+      },
+      "weights": {
+        "ransomware": 0.2
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 8908,
+    "process": "C:\\Users\\user\\AppData\\Roaming\\WindowsRuntime\\winrt.exe",
+    "children": [
+      {
+        "pid": 4108,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7896,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 9904,
+            "process": "C:\\Windows\\System32\\schtasks.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1576,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9292,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 616,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10448,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9760,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 10296,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10044,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8464,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 10700,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8240,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6808,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 1120,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3364,
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\windowsruntime\\stealer.exe",
+        "children": []
+      },
+      {
+        "pid": 5256,
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\windowsruntime\\stealer.exe",
+        "children": []
+      },
+      {
+        "pid": 10028,
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\windowsruntime\\stealer.exe",
+        "children": []
+      }
+    ]
+  }
+}

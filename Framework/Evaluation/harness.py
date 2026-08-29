@@ -181,19 +181,15 @@ def calculate_metrics(results):
             round(
                 float(detected_family_classification_accuracy),
                 4,
-                )if detected_family_classification_accuracy is not None
-                else None
-            ),
+            )if detected_family_classification_accuracy is not None
+            else None
+        ),
         "mean_detection_delay_seconds": (
             round(mean_detection_delay, 4)
             if mean_detection_delay is not None
             else None
-        ),
+        )
     }
-
-
-
-
 
 
 def print_summary(metrics):
@@ -220,7 +216,7 @@ def print_summary(metrics):
               )
     else:
         print("Detected Family Classification Accuracy: N/A")
-    
+
 
     if metrics["mean_detection_delay_seconds"] is not None:
         print("Mean Detection Delay:  %.3f seconds" % metrics["mean_detection_delay_seconds"])

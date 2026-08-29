@@ -38,10 +38,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
             Finding(
                 indicator="process_access",
                 description="Process accessed another process",
-                weights={
-                    "spyware": 0.10,
-                    "rat": 0.15,
-                },
+                weights={},
                 fingerprint=f"process_access:{root_pid}",
                 details={
                     "process": event.get("process", ""),

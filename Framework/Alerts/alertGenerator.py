@@ -9,8 +9,7 @@ class AlertGenerator:
         self.input_filepath = input_filepath
         self.output_filepath = output_filepath
 
-
-    """load detection results, print human readable alerts, write machine alerts"""
+    #load detection results, print human readable alerts, write machine alerts
     def run(self):
         result = loadDetectionResult(self.input_filepath)
 

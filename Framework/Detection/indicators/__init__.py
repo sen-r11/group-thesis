@@ -20,6 +20,7 @@ from Detection.indicators.rules import (
     rat_remote_shell,
     rat_uac_bypass,
     rat_host_discovery,
+    spyware_collection,
 )
 
 DETECTORS = [
@@ -42,4 +43,5 @@ DETECTORS = [
     rat_remote_shell,
     rat_uac_bypass,
     rat_host_discovery,
+    spyware_collection,
 ]

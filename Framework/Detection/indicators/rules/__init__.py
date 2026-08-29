@@ -21,3 +21,6 @@ from Detection.indicators.rules.rat_dns_fanout import detect as rat_dns_fanout
 from Detection.indicators.rules.rat_remote_shell import detect as rat_remote_shell
 from Detection.indicators.rules.rat_uac_bypass import detect as rat_uac_bypass
 from Detection.indicators.rules.rat_host_discovery import detect as rat_host_discovery
+
+# Spyware additional indicator
+from Detection.indicators.rules.spyware_collection import detect as spyware_collection
