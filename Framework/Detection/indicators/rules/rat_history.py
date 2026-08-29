@@ -4,6 +4,9 @@
 # beacon interval. These records live on the StateStore instance, so a new
 # engine starts empty and one sample cannot carry history into the next.
 
+# Records are kept against the file on disk rather than the PID. Malware
+# restarts itself, and history kept per PID starts again every time it does
+
 from collections import deque
 
 MAX_RECORDS = 512
@@ -17,9 +20,9 @@ def _table(store, name):
     return table
 
 
-def record_connection(store, pid, time, destination, port):
+def record_connection(store, image, time, destination, port):
     table = _table(store, "rat_connections")
-    key = (pid, destination, port)
+    key = (str(image or "").lower(), destination, port)
     history = table.get(key)
     if history is None:
         history = deque(maxlen=MAX_RECORDS)
@@ -28,12 +31,13 @@ def record_connection(store, pid, time, destination, port):
     return history
 
 
-def record_dns(store, pid, time, name):
+def record_dns(store, image, time, name):
     table = _table(store, "rat_dns")
-    history = table.get(pid)
+    key = str(image or "").lower()
+    history = table.get(key)
     if history is None:
         history = []
-        table[pid] = history
+        table[key] = history
     if name not in history and len(history) < MAX_RECORDS:
         history.append(name)
     return history

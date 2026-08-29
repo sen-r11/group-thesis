@@ -18,6 +18,8 @@ from Detection.indicators.rules import (
     rat_privileged_access,
     rat_dns_fanout,
     rat_remote_shell,
+    rat_uac_bypass,
+    rat_host_discovery,
 )
 
 DETECTORS = [
@@ -38,4 +40,6 @@ DETECTORS = [
     rat_privileged_access,
     rat_dns_fanout,
     rat_remote_shell,
+    rat_uac_bypass,
+    rat_host_discovery,
 ]
