@@ -1,5 +1,5 @@
 {
-  "sample_id": "malicious-20260828-232709",
+  "sample_id": "rat-remcos-20260828",
   "label": "malicious",
   "family": "rat",
   "note": "RemcosRAT + 2 other RATs",

@@ -187,10 +187,34 @@ def report_channel():
     return 0
 
 
+def slug(text):
+    # Run the words together rather than hyphenate them, so the hyphens in a
+    # sample id only ever separate its parts. "Adware.Yogi" reads as
+    # "adwareyogi", which is still the name someone would search for
+    words = "".join(c if c.isalnum() else " " for c in text.lower()).split()
+    return "".join(words)[:24]
+
+
+def default_sample_id(label, family, note, stamp):
+    # A family is only ever set on a malicious capture, so naming one after
+    # its family already says what it is and "malicious" adds nothing. The
+    # note carries the sample name, which is what anyone goes looking for
+    lead = family if family else label
+    name = slug(note) or ("baseline" if label == "benign" else "sample")
+    return "%s-%s-%s" % (lead, name, stamp)
+
+
 def run(args):
-    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    sample_id = args.sample_id or "%s-%s" % (args.label, stamp)
+    now = datetime.now()
+    sample_id = args.sample_id or default_sample_id(
+        args.label, args.family, args.note, now.strftime("%Y%m%d"))
     jsonl_path = args.out or os.path.join("captures", "%s.jsonl" % sample_id)
+    # Two runs against one sample on one day would agree on a name, and the
+    # second would be written over the first. The time tells them apart, and
+    # is only needed for the one that would otherwise collide
+    if not args.sample_id and not args.out and os.path.exists(jsonl_path):
+        sample_id = "%s-%s" % (sample_id, now.strftime("%H%M%S"))
+        jsonl_path = os.path.join("captures", "%s.jsonl" % sample_id)
     directory = os.path.dirname(os.path.abspath(jsonl_path))
     if directory and not os.path.isdir(directory):
         os.makedirs(directory)
