@@ -55,6 +55,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
                 "rat": 0.20,
             },
             fingerprint=f"suspicious_network:{root_pid}:{destination}:{port}",
+            score_key=f"suspicious_network:{root_pid}",
             details={
                 "process": event.get("process", ""),
                 "destination": destination,

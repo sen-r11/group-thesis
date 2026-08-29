@@ -1,0 +1,42 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "rat",
+  "possible_families": [],
+  "score": 0.15,
+  "threshold": 0.7,
+  "events_processed": 2,
+  "pid": 4404,
+  "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+  "family_scores": {
+    "ransomware": 0.05,
+    "spyware": 0.1,
+    "rat": 0.15
+  },
+  "triggered_indicators": [
+    "suspicious_dns"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1785230403.441,
+      "event_id": 22,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+        "dns": "updates.example-cdn.net"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 4404,
+    "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+    "children": []
+  }
+}

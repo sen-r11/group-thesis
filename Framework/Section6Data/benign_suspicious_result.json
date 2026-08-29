@@ -1,0 +1,581 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "ransomware",
+  "possible_families": [],
+  "score": 0.55,
+  "threshold": 0.7,
+  "events_processed": 30355,
+  "pid": 65084,
+  "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+  "family_scores": {
+    "ransomware": 0.55,
+    "spyware": 0.25,
+    "rat": 0.35
+  },
+  "triggered_indicators": [
+    "suspicious_network_connection",
+    "process_access",
+    "rapid_file_activity",
+    "file_deletion_burst",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection",
+    "suspicious_network_connection"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975867.467373,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "239.255.255.250",
+        "port": 1900
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.15,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787975920.208973,
+      "event_id": 10,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "target": "C:\\Windows\\Explorer.EXE"
+      },
+      "weights": {
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "rapid_file_activity",
+      "description": "Process performed a large number of file operations in a short time period",
+      "time": 1787975920.209402,
+      "event_id": 11,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "event_count": 5,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe"
+      },
+      "weights": {
+        "ransomware": 0.3
+      }
+    },
+    {
+      "indicator": "file_deletion_burst",
+      "description": "Process deleted multiple files within a short time period",
+      "time": 1787975923.179363,
+      "event_id": 23,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "deletion_count": 4,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe"
+      },
+      "weights": {
+        "ransomware": 0.2
+      }
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975927.09766,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.255",
+        "port": 57621
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975927.097681,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.255",
+        "port": 57621
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975931.25606,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 62945
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975931.256075,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 62946
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975957.287853,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 57621
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975957.287867,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 57621
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975974.467724,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975974.467745,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975978.619827,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.210",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975978.619848,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "fe80:0:0:0:106c:2115:405b:bb08",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975985.621872,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "224.0.0.251",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975985.621969,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "ff02:0:0:0:0:0:0:fb",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975985.621975,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "fe80:0:0:0:1855:c0a:addc:f8de",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975985.622021,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "fe80:0:0:0:467b:d5b2:243a:8b4a",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975986.642927,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.196",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975987.659159,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 56564
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787975987.659164,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 56566
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379805,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 48735
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379826,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 59996
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379847,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 55657
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379873,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 35758
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379887,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 34355
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379906,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 50695
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.379917,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 59830
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.380032,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 43211
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.380043,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 42329
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.380056,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 39513
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.380068,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 46551
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976016.380085,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.1",
+        "port": 42175
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976051.892668,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 49615
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976051.892685,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 49616
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976146.125431,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.166",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976146.125465,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "fe80:0:0:0:8b8:c2ff:fea8:ffe",
+        "port": 5353
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976171.750298,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.56.1",
+        "port": 50439
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1787976171.750309,
+      "event_id": 3,
+      "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+      "details": {
+        "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "destination": "192.168.0.200",
+        "port": 50440
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 65084,
+    "process": "C:\\Users\\kener\\AppData\\Roaming\\Spotify\\Spotify.exe",
+    "children": []
+  }
+}

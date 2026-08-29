@@ -1,0 +1,164 @@
+{
+  "verdict": "malicious",
+  "family": "spyware",
+  "leading_family": "spyware",
+  "possible_families": [
+    "spyware",
+    "rat"
+  ],
+  "score": 2.0,
+  "threshold": 0.7,
+  "events_processed": 27428,
+  "pid": 4,
+  "process": "System",
+  "family_scores": {
+    "ransomware": 0.8,
+    "spyware": 2.0,
+    "rat": 2.0
+  },
+  "triggered_indicators": [
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence",
+    "registry_persistence"
+  ],
+  "evidence": [
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970779.15645,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\\\Device\\HarddiskVolume3\\Windows\\System32\\DataExchangeHost.exe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970779.156471,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\SequenceNumber",
+        "detail": "DWORD (0x000002fc)"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970830.52033,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Microsoft.ZuneMusic_8wekyb3d8bbwe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970853.601122,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970854.912939,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Microsoft.WindowsCalculator_8wekyb3d8bbwe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970886.273901,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\\\Device\\HarddiskVolume3\\Windows\\System32\\Taskmgr.exe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970893.431671,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\\\Device\\HarddiskVolume3\\Windows\\System32\\conhost.exe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787970893.432085,
+      "event_id": 13,
+      "process": "System",
+      "details": {
+        "registry": "HKLM\\System\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-1521944006-3007571009-4191952194-1001\\\\Device\\HarddiskVolume3\\Windows\\System32\\cmd.exe",
+        "detail": "Binary Data"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 4,
+    "process": "System",
+    "children": []
+  }
+}

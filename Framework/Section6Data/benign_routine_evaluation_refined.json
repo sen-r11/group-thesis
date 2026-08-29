@@ -1,0 +1,45 @@
+{
+  "threshold": 0.7,
+  "samples": [
+    {
+      "sample_id": "benign_routine_01",
+      "telemetry_path": "C:\\Users\\kener\\Documents\\GitHub\\group-thesis\\Framework\\Test Data\\benign_routine_5min.jsonl",
+      "expected_verdict": "benign",
+      "predicted_verdict": "benign",
+      "expected_family": null,
+      "predicted_family": null,
+      "score": 0.65,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.65,
+        "spyware": 0.2,
+        "rat": 0.35
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "process_access",
+        "rapid_file_activity",
+        "file_deletion_burst",
+        "suspicious_process_spawn"
+      ],
+      "events_processed": 27428,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    }
+  ],
+  "metrics": {
+    "true_positive": 0,
+    "false_positive": 0,
+    "true_negative": 1,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "family_evaluated": 0,
+    "detected_family_classification_accuracy": null,
+    "mean_detection_delay_seconds": null
+  }
+}

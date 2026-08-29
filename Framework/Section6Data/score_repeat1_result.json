@@ -1,0 +1,92 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "rat",
+  "possible_families": [],
+  "score": 0.6,
+  "threshold": 0.7,
+  "events_processed": 5,
+  "pid": 4404,
+  "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+  "family_scores": {
+    "ransomware": 0.45,
+    "spyware": 0.5,
+    "rat": 0.6
+  },
+  "triggered_indicators": [
+    "suspicious_dns",
+    "suspicious_network_connection",
+    "registry_persistence",
+    "suspicious_file_extension"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1785230403.441,
+      "event_id": 22,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+        "dns": "updates.example-cdn.net"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "suspicious_network_connection",
+      "description": "Process running from a user-writable location made a network connection over an uncommon port",
+      "time": 1785230403.902,
+      "event_id": 3,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+        "destination": "203.0.113.7",
+        "port": 8443
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.15,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1785230405.267,
+      "event_id": 13,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "registry": "HKU\\S-1-5-21-1004\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater",
+        "detail": "C:\\Users\\kai\\AppData\\Roaming\\updater.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "suspicious_file_extension",
+      "description": "Process created a file with a suspicious ransomware-style extension",
+      "time": 1785230411.048,
+      "event_id": 11,
+      "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+      "details": {
+        "path": "C:\\Users\\kai\\Documents\\report.docx.locked",
+        "extension": ".locked"
+      },
+      "weights": {
+        "ransomware": 0.25
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 4404,
+    "process": "C:\\Users\\kai\\Downloads\\invoice.exe",
+    "children": []
+  }
+}

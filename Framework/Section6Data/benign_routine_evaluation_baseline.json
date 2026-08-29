@@ -1,0 +1,76 @@
+{
+  "threshold": 0.7,
+  "samples": [
+    {
+      "sample_id": "benign_routine_01",
+      "telemetry_path": "C:\\Users\\kener\\Documents\\GitHub\\group-thesis\\Framework\\Test Data\\benign_routine_5min.jsonl",
+      "expected_verdict": "benign",
+      "predicted_verdict": "malicious",
+      "expected_family": null,
+      "predicted_family": "rat",
+      "score": 6.15,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 2.0,
+        "spyware": 4.6,
+        "rat": 6.15
+      },
+      "possible_families": [
+        "rat"
+      ],
+      "triggered_indicators": [
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "suspicious_network_connection",
+        "process_access",
+        "rapid_file_activity",
+        "file_deletion_burst",
+        "suspicious_network_connection",
+        "suspicious_network_connection"
+      ],
+      "events_processed": 27428,
+      "events_until_detection": 1861,
+      "file_event_count_until_detection": 58,
+      "first_detection_time": 1787970796.297485,
+      "detection_delay_seconds": 20.2551
+    }
+  ],
+  "metrics": {
+    "true_positive": 0,
+    "false_positive": 1,
+    "true_negative": 0,
+    "false_negative": 0,
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "family_evaluated": 0,
+    "detected_family_classification_accuracy": null,
+    "mean_detection_delay_seconds": null
+  }
+}
