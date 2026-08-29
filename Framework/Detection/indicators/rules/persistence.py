@@ -8,9 +8,16 @@ from Detection.state import ProcessState, StateStore
 PERSISTENCE_KEYS = (
     "\\software\\microsoft\\windows\\currentversion\\run",
     "\\software\\microsoft\\windows\\currentversion\\runonce",
-    "\\system\\currentcontrolset\\services\\",
     "\\software\\microsoft\\windows nt\\currentversion\\winlogon\\shell",
     "\\software\\microsoft\\windows nt\\currentversion\\winlogon\\userinit",
+)
+
+SERVICE_ROOT = "\\system\\currentcontrolset\\services\\"
+
+SERVICE_PERSISTENCE_VALUES = (
+    "\\imagepath",
+    "\\start",
+    "\\parameters\\servicedll",
 )
 
 def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[Finding]:
@@ -37,6 +44,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
                 "rat": 0.25,
             },
             fingerprint=f"persistence:{root_pid}:{registry}",
+            score_key=f"persistence:{root_pid}",
             details={
                 "registry": event.get("registry", ""),
                 "detail": event.get("detail", ""),

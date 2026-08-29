@@ -177,12 +177,13 @@ def calculate_metrics(results):
         "recall": round(float(recall), 4),
         "f1_score": round(float(f1), 4),
         "family_evaluated": len(family_results),
-        "detected_family_classification_accuracy": round(
-            float(
-                detected_family_classification_accuracy
+        "detected_family_classification_accuracy": (
+            round(
+                float(detected_family_classification_accuracy),
+                4,
+                )if detected_family_classification_accuracy is not None
+                else None
             ),
-            4,
-        ),
         "mean_detection_delay_seconds": (
             round(mean_detection_delay, 4)
             if mean_detection_delay is not None
@@ -212,7 +213,14 @@ def print_summary(metrics):
     print("Precision:  %.3f" % metrics["precision"])
     print("Recall:  %.3f" % metrics["recall"])
     print("F1 Score:  %.3f" % metrics["f1_score"])
-    print("Detected Family Classification Accuracy:  %.3f" % metrics["detected_family_classification_accuracy"])
+
+    if metrics["detected_family_classification_accuracy"] is not None:
+        print("Detected Family Classification Accuracy:  %3f"
+              % metrics["detected_family_classification_accuracy"]
+              )
+    else:
+        print("Detected Family Classification Accuracy: N/A")
+    
 
     if metrics["mean_detection_delay_seconds"] is not None:
         print("Mean Detection Delay:  %.3f seconds" % metrics["mean_detection_delay_seconds"])

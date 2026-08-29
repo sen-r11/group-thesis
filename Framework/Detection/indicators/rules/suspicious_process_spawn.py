@@ -46,6 +46,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
                 "rat": 0.20,
             },
             fingerprint=f"suspicious_spawn:{root_pid}:{matched_process}",
+            score_key=f"suspicious_spawn:{root_pid}",
             details={
                 "process": event.get("process", ""),
                 "parent": event.get("parent", ""),
