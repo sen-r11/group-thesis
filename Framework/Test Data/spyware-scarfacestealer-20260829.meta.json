@@ -1,0 +1,21 @@
+{
+  "sample_id": "spyware-scarfacestealer-20260829",
+  "label": "malicious",
+  "family": "spyware",
+  "note": "ScarfaceStealer",
+  "collected": "2026-08-29T16:45:17",
+  "mode": "live 300s",
+  "machine": "WIN11",
+  "events": 128637,
+  "event_counts": {
+    "1": 46,
+    "3": 345,
+    "10": 25340,
+    "11": 13249,
+    "13": 87161,
+    "17": 26,
+    "18": 1234,
+    "22": 55,
+    "23": 1181
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "sample_id": "spyware-agenttesla-20260828",
+  "label": "malicious",
+  "family": "spyware",
+  "note": "AgentTesla",
+  "collected": "2026-08-28T23:29:05",
+  "mode": "live 300s",
+  "machine": "WIN11",
+  "events": 1331,
+  "event_counts": {
+    "1": 18,
+    "3": 21,
+    "10": 862,
+    "11": 125,
+    "13": 212,
+    "17": 2,
+    "18": 3,
+    "22": 14,
+    "23": 74
+  }
+}

@@ -1,3 +1,9 @@
 sample_id,path,label,family
 events.jsonl,../Test Data/events.jsonl,malicious,ransomware
 benign_test.jsonl,../Test Data/benign_test.jsonl,benign,
+benign-baseline-20260829,../Test Data/benign-baseline-20260829.jsonl,benign,
+ransomware-adwareyogi-20260828,../Test Data/ransomware-adwareyogi-20260828.jsonl,malicious,ransomware
+ransomware-crpx0-20260828,../Test Data/ransomware-crpx0-20260828.jsonl,malicious,ransomware
+rat-remcos-20260828,../Test Data/rat-remcos-20260828.jsonl,malicious,rat
+spyware-agenttesla-20260828,../Test Data/spyware-agenttesla-20260828.jsonl,malicious,spyware
+spyware-scarfacestealer-20260829,../Test Data/spyware-scarfacestealer-20260829.jsonl,malicious,spyware
