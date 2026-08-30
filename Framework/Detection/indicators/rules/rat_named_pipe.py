@@ -40,6 +40,10 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
     pipe = str(event.get("pipe") or "")
     if not pipe:
         return []
+    
+    if pipe.strip().lower() == "<anonymous pipe>":
+        return []
+    
     if any(pipe.lower().startswith(known) for known in RUNTIME_PIPES):
         return []
 

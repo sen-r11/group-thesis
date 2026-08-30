@@ -25,15 +25,38 @@ DESTRUCTIVE = (
     "wevtutil cl",
 )
 
+PERSISTENCE_COMMANDS = (
+    "schtasks /create",
+    "schtasks.exe /create",
+    "sc create",
+    "sc.exe create",
+    "sc config",
+    "sc.exe config",
+    "register-scheduledtask",
+    "new-scheduledtask",
+)
+
+REMOTE_OPERATOR_COMMANDS = (
+    "whoami",
+    "hostname",
+    "ipconfig",
+    "systeminfo",
+    "tasklist",
+    "net user",
+    "net localgroup",
+    "quser",
+    "qwinsta",
+    "query user",
+    "arp -a",
+    "route print",
+)
+
 # The shell, and the command line words that mean it runs one command and
 # exits. A person opening a terminal starts a shell with no command.
 SHELLS = {
     "cmd.exe": ("/c",),
     "powershell.exe": ("-command", "-c ", "-enc", "-encodedcommand"),
     "pwsh.exe": ("-command", "-c ", "-enc", "-encodedcommand"),
-    "wscript.exe": ("",),
-    "cscript.exe": ("",),
-    "mshta.exe": ("",),
 }
 
 
@@ -72,32 +95,58 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
         return []
 
     root_pid = store.attribution_state(direct_state.pid).pid
-    destructive = any(word in cmdline for word in DESTRUCTIVE)
 
-    if destructive:
-        indicator = "defence_evasion_command"
-        description = "Process ran a shell command that turns off protection or destroys recovery data"
-        weights = {"ransomware": 0.30, "spyware": 0.05, "rat": 0.05}
-    else:
-        indicator = "remote_command_execution"
-        description = "Network-active process ran a one-shot shell command"
-        weights = {"spyware": 0.10, "rat": 0.40}
-
+    if any(word in cmdline for word in PERSISTENCE_COMMANDS):
+        return []
+    if any(word in cmdline for word in DESTRUCTIVE):
+        return [
+            Finding(
+                indicator="defence_evasion_command",
+                description=(
+                    "Process ran a shell command that turns off protection "
+                    "or destroys recovery data"
+                    ),
+                    weights={},
+                    fingerprint=f"defence_evasion:{root_pid}:{cmdline[:80]}",
+                    score_key=f"defence_evasion:{root_pid}",
+                    details={
+                        "parent": parent.process,
+                        "shell": child,
+                        "command_line": event.get("cmdline", ""),
+                        "parent_network_events": len(recent),
+                        "last_destination": recent[-1][2],
+                        },
+                        target_pid=root_pid,
+                        )
+                        ]
+    encoded = "-enc" in cmdline or "-encodedcommand" in cmdline
+    operator_command = (
+        encoded
+        or any(word in cmdline for word in REMOTE_OPERATOR_COMMANDS)
+        )
+    if not operator_command:
+        return []
     return [
         Finding(
-            indicator=indicator,
-            description=description,
-            weights=weights,
-            fingerprint=f"remote_shell:{root_pid}:{child}:{cmdline[:80]}",
-            score_key=f"remote_shell:{indicator}:{root_pid}",
-            details={
-                "parent": parent.process,
-                "shell": child,
-                "command_line": event.get("cmdline", ""),
-                "encoded": "-enc" in cmdline,
-                "parent_network_events": len(recent),
-                "last_destination": recent[-1][2],
-            },
-            target_pid=root_pid,
-        )
-    ]
+            indicator="remote_command_execution",
+            description=(
+                "Network-active process executed a command consistent "
+                "with remote operator activity"
+                ),
+                weights={
+                    "spyware": 0.10,
+                    "rat": 0.40,
+                    },
+                    fingerprint=f"remote_shell:{root_pid}:{child}:{cmdline[:80]}",
+                    score_key=f"remote_shell:remote_command_execution:{root_pid}",
+                    details={
+                        "parent": parent.process,
+                        "shell": child,
+                        "command_line": event.get("cmdline", ""),
+                        "encoded": encoded,
+                        "parent_network_events": len(recent),
+                        "last_destination": recent[-1][2]
+                        },
+                        target_pid=root_pid,
+                    )
+                ]

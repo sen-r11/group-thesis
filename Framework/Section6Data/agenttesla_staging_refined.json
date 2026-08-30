@@ -1,0 +1,144 @@
+{
+  "verdict": "malicious",
+  "family": "spyware",
+  "leading_family": "spyware",
+  "possible_families": [
+    "spyware"
+  ],
+  "score": 0.7,
+  "threshold": 0.7,
+  "events_processed": 1331,
+  "pid": 11224,
+  "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+  "family_scores": {
+    "ransomware": 0.05,
+    "spyware": 0.7,
+    "rat": 0.25
+  },
+  "triggered_indicators": [
+    "process_access",
+    "collection_staging_network",
+    "collection_staging_network",
+    "suspicious_dns",
+    "host_discovery"
+  ],
+  "evidence": [
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787956160.996672,
+      "event_id": 10,
+      "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "target": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "collection_staging_network",
+      "description": "Self-spawning process chain staged multiple files in user-writable locations before outbound communication",
+      "time": 1787956162.415233,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "destination": "185.29.10.15",
+        "port": "80",
+        "staged_file_count": 25,
+        "staged_files": [
+          "c:\\users\\user\\appdata\\local\\temp\\nsh7c91.tmp",
+          "c:\\users\\user\\appdata\\local\\temp\\nsn7d00.tmp",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\distributrers.ini",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\fidley",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\flatbrod.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\herliggrelse.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\kamille.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\myrekrybet"
+        ],
+        "chain_pids": [
+          11224,
+          4212
+        ],
+        "method": "staging_followed_by_outbound_network"
+      },
+      "weights": {
+        "spyware": 0.6,
+        "rat": 0.1
+      }
+    },
+    {
+      "indicator": "collection_staging_network",
+      "description": "Self-spawning process chain staged multiple files in user-writable locations before outbound communication",
+      "time": 1787956166.858028,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "destination": "208.95.112.1",
+        "port": "80",
+        "staged_file_count": 25,
+        "staged_files": [
+          "c:\\users\\user\\appdata\\local\\temp\\nsh7c91.tmp",
+          "c:\\users\\user\\appdata\\local\\temp\\nsn7d00.tmp",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\distributrers.ini",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\fidley",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\flatbrod.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\herliggrelse.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\kamille.txt",
+          "c:\\users\\user\\appdata\\roaming\\cylindrella\\uproduktive\\myrekrybet"
+        ],
+        "chain_pids": [
+          11224,
+          4212
+        ],
+        "method": "staging_followed_by_outbound_network"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1787956166.861527,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "dns": "ip-api.com"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "host_discovery",
+      "description": "Process running from a user-writable location looked up the address of this machine",
+      "time": 1787956166.861527,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "service": "ip-api.com",
+        "query": "ip-api.com"
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 11224,
+    "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+    "children": [
+      {
+        "pid": 8504,
+        "process": "C:\\Users\\user\\Downloads\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655\\f206a9fdfcd502255e08e0ff8fa1eadb91c9524c16d7c21f40a75cfde5c46655.exe",
+        "children": []
+      }
+    ]
+  }
+}

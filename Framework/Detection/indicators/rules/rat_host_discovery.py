@@ -61,10 +61,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
         Finding(
             indicator="host_discovery",
             description="Process running from a user-writable location looked up the address of this machine",
-            weights={
-                "spyware": 0.25,
-                "rat": 0.30,
-            },
+            weights={},
             fingerprint=f"host_discovery:{root_pid}:{service}",
             score_key=f"host_discovery:{root_pid}",
             details={

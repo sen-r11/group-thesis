@@ -58,6 +58,17 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
     if target and target.lower() == process:
         return []
 
+    target_pid = event.get("target_pid")
+
+    if isinstance(target_pid, str) and target_pid.isdigit():
+        target_pid = int(target_pid)
+
+    if isinstance(target_pid, int):
+            target_state = store.get(target_pid)
+
+            if target_state is not None and target_state.ppid == direct_state.pid:
+                return []
+
     rights = [name for bit, name in RIGHT_NAMES if access & bit]
     root_pid = store.attribution_state(direct_state.pid).pid
     return [

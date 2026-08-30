@@ -1,0 +1,126 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "ransomware",
+  "possible_families": [],
+  "score": 0.45,
+  "threshold": 0.7,
+  "events_processed": 30355,
+  "pid": 60760,
+  "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "family_scores": {
+    "ransomware": 0.45,
+    "spyware": 0.1,
+    "rat": 0.2
+  },
+  "triggered_indicators": [
+    "suspicious_process_spawn",
+    "process_access",
+    "suspicious_process_spawn",
+    "rapid_file_activity",
+    "suspicious_process_spawn"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787976121.963995,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "\"C:\\Windows\\system32\\cmd.exe\" /c echo FrameworkBenignTest"
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787976121.964329,
+      "event_id": 10,
+      "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "target": "C:\\Windows\\system32\\cmd.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787976122.027803,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "parent": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -Command \"Get-Process | Select-Object -First 5\""
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "rapid_file_activity",
+      "description": "Process performed a large number of file operations in a short time period",
+      "time": 1787976123.104368,
+      "event_id": 23,
+      "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "details": {
+        "event_count": 5,
+        "window_seconds": 10.0,
+        "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      "weights": {
+        "ransomware": 0.3
+      }
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787976123.15015,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\vssadmin.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "parent": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "\"C:\\Windows\\system32\\vssadmin.exe\" list shadows"
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 60760,
+    "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "children": [
+      {
+        "pid": 59976,
+        "process": "C:\\Windows\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 73632,
+        "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "children": []
+      },
+      {
+        "pid": 74184,
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "children": []
+      },
+      {
+        "pid": 69808,
+        "process": "C:\\Windows\\System32\\schtasks.exe",
+        "children": []
+      },
+      {
+        "pid": 58220,
+        "process": "C:\\Windows\\System32\\wevtutil.exe",
+        "children": []
+      }
+    ]
+  }
+}

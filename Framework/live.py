@@ -890,6 +890,7 @@ def capture(args):
 
                 view.alerts += 1
                 view.note_alert(alert)
+
                 if screen is not None:
                     # Printing the alert here would scroll the screen away
                     width, height = screen.size()
@@ -897,8 +898,14 @@ def capture(args):
                         screen.draw(view.render(width, height, colour=True))
                 elif not args.quiet:
                     show_alert(alert, human)
+
                 if out:
-                    record = machine(alert) if machine else alert
+                    record = machine(alert) if machine else dict(alert)
+
+                    if args.investigate:
+                        record["investigation"] = alert.get("investigation", {})
+                        record["reported"] = True
+
                     out.write(json.dumps(record) + "\n")
                     out.flush()
 
@@ -1070,3 +1077,5 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+
+

@@ -499,13 +499,7 @@
 {"kind": "host", "event_id": 13, "time": 1787963551.649942, "pid": 7888, "process": "C:\\Windows\\Explorer.EXE", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\Puebzr", "detail": "Binary Data"}
 {"kind": "host", "event_id": 13, "time": 1787963551.650007, "pid": 7888, "process": "C:\\Windows\\Explorer.EXE", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA", "detail": "Binary Data"}
 {"kind": "host", "event_id": 1, "time": 1787963553.298433, "pid": 62836, "process": "C:\\Windows\\System32\\reg.exe", "cmdline": "reg  add HKCU\\Software\\FrameworkParserTest /v TestValue /t REG_SZ /d ParserTest /f", "ppid": 43948, "parent": "C:\\Windows\\System32\\cmd.exe"}
-{"kind": "host",
- "event_id": 13,
-  "time": 1787963553.304825,
-   "pid": 62836,
-    "process": "C:\\Windows\\system32\\reg.exe",
-     "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\FrameworkParserTest\\TestValue",
-      "detail": "ParserTest"}
+{"kind": "host", "event_id": 13, "time": 1787963553.304825, "pid": 62836, "process": "C:\\Windows\\system32\\reg.exe", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\FrameworkParserTest\\TestValue", "detail": "ParserTest"}
 {"kind": "host", "event_id": 13, "time": 1787963554.654848, "pid": 7888, "process": "C:\\Windows\\Explorer.EXE", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\pzq.rkr", "detail": "Binary Data"}
 {"kind": "host", "event_id": 13, "time": 1787963554.654888, "pid": 7888, "process": "C:\\Windows\\Explorer.EXE", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA", "detail": "Binary Data"}
 {"kind": "host", "event_id": 13, "time": 1787963555.250551, "pid": 45008, "process": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "registry": "HKU\\S-1-5-21-1521944006-3007571009-4191952194-1001\\Software\\Microsoft\\Office\\16.0\\Word\\Resiliency\\DocumentRecovery\\3299D4BA\\3299D4BA", "detail": "Binary Data"}

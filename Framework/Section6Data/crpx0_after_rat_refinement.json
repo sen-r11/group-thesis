@@ -1,0 +1,5512 @@
+{
+  "verdict": "malicious",
+  "family": "ransomware",
+  "leading_family": "ransomware",
+  "possible_families": [
+    "ransomware",
+    "rat"
+  ],
+  "score": 0.7,
+  "threshold": 0.7,
+  "events_processed": 14075,
+  "pid": 4552,
+  "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+  "family_scores": {
+    "ransomware": 0.7,
+    "spyware": 0.4,
+    "rat": 0.6
+  },
+  "triggered_indicators": [
+    "process_access",
+    "suspicious_process_spawn",
+    "suspicious_dns",
+    "host_discovery",
+    "scheduled_task_persistence",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "defence_evasion_command",
+    "shadow_copy_deletion",
+    "suspicious_process_spawn"
+  ],
+  "evidence": [
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787956148.70962,
+      "event_id": 10,
+      "process": "C:\\WINDOWS\\system32\\conhost.exe",
+      "details": {
+        "process": "C:\\WINDOWS\\system32\\conhost.exe",
+        "target": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956151.035178,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"ver\""
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1787956151.19822,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+      "details": {
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "dns": "ip-api.com"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "host_discovery",
+      "description": "Process running from a user-writable location looked up the address of this machine",
+      "time": 1787956151.19822,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+      "details": {
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "service": "ip-api.com",
+        "query": "ip-api.com"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "scheduled_task_persistence",
+      "description": "Process created a scheduled task or a service, which survives a restart",
+      "time": 1787956152.842988,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\schtasks.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\schtasks.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "schtasks  /create /f /sc onlogon /tn \"OneDrive Sync Maintenance\" /tr \"\\\"C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe\\\" \\\"C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\sys_service.py\\\" bootstrap_done\"",
+        "tool": "schtasks.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.2,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956152.896825,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im kes.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956153.225924,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im a2daemon.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956153.602084,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fsgk32.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956154.000957,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im eProxy.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956154.404205,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im TmProxy.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956154.826592,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im AvastUI.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956155.149374,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mbamservice.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956155.425989,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fsm32.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956155.931689,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im CSAgent.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956156.450731,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im NortonSecurity.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956156.791183,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im comodo.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956157.802535,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SentinelService.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956158.254474,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im sophos_av.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956158.449579,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mfevtps.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956158.676993,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im CylanceUI.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956158.850388,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im avp.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956159.105257,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im cfp.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956159.49742,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im bdsvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956159.777928,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mbam.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956160.801485,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im Traps.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956161.780952,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mcshield.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956162.790735,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im vprd.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956163.049363,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mfeann.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956163.538849,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fortiservice.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956163.832819,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im panw_edr.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956164.138838,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im TMBMSRV.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956164.344373,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im S1Agent.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956164.54238,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im tmccsf.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956164.94951,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im MsSense.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956165.250397,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im cytool.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956165.795265,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im cb.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956165.979546,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fsav32.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956166.325011,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im ccSvcHst.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956166.530569,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im AVGUI.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956166.780918,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im egui.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956167.101506,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SymCorpUI.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956167.78059,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SecurityHealthSystray.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956168.192694,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im mbamtray.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956168.789908,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im swi_service.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956169.300884,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im TmPfw.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956169.646417,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SophosUI.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956169.946807,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im a2service.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956170.819991,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im bdredline.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956171.781994,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im rtvscan.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956172.815962,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im forticlient.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956173.786625,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im AVGSvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956174.822964,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im MsMpEng.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956175.787353,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im WRSA.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956176.83315,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im CbDefense.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956177.778043,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im cmdagent.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956178.002497,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im pccntmon.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956178.809508,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im bdagent.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956179.039963,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im AvastSvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956179.782435,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fortiedr.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956180.181717,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im Sense.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956180.697232,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im McAfeeAP.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956180.99421,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im WRCoreService.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956181.39344,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im CSFalconService.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956181.822919,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im VipreSvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956182.534787,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im NisSrv.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956182.911766,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SavService.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956183.234567,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im fsma32.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956183.47134,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im CylanceSvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956183.836176,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im VipreEndpoint.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956184.649348,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im RepMgr.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956184.8224,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im eamonm.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956185.039806,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im masvc.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956185.803952,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im kavfs.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956186.667643,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im ekrn.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956187.113085,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SophosFS.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956187.410645,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im SentinelWorker.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956187.787685,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im a2guard.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956188.074372,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"taskkill /f /im WRSVC.exe\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956188.485058,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop avast! Firewall /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956188.717243,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop avast! Firewall\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956188.802791,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete avast! Firewall\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956189.209917,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop FortiClient /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956189.42943,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop FortiClient\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956189.512735,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete FortiClient\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956189.951779,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop eProxy /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.003737,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop eProxy\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.038206,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete eProxy\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.30873,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop Norton Security /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.425592,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop Norton Security\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.464,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete Norton Security\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.726801,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop TmCCSF /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.78794,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop TmCCSF\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956190.813955,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete TmCCSF\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.591587,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop Traps /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.651835,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop Traps\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.691204,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete Traps\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.858671,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop EmsisoftSecurityService /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.919593,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop EmsisoftSecurityService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956191.958845,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete EmsisoftSecurityService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.359104,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop S1Management /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.413317,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop S1Management\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.456025,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete S1Management\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.763701,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop WdNisSvc /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.821517,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop WdNisSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956192.851581,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete WdNisSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.176305,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop VipreSvc /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.264976,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop VipreSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.314089,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete VipreSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.626161,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop KES /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.703298,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop KES\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956193.736224,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete KES\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.115469,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop bdagent /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.173451,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop bdagent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.204135,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete bdagent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.580121,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop Sense /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.626673,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop Sense\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.65943,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete Sense\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.896082,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop MpsSvc /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.954936,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop MpsSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956194.986647,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete MpsSvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956195.782921,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop rtvscan /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956195.836501,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop rtvscan\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956195.877594,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete rtvscan\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956196.77769,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop FSGK32 /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956196.842017,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop FSGK32\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956196.874712,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete FSGK32\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956197.782277,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop McAfeeEngineService /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956197.842583,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop McAfeeEngineService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956197.869636,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete McAfeeEngineService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956198.788981,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop SentinelService /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956198.857408,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop SentinelService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956198.888941,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete SentinelService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956199.791309,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop SecurityHealthService /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956199.845227,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop SecurityHealthService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956199.881389,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete SecurityHealthService\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.12234,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop KAVFS /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.227647,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop KAVFS\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.281132,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete KAVFS\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.723695,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop BitDefender_UpdateServer /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.818193,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop BitDefender_UpdateServer\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956200.853478,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete BitDefender_UpdateServer\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956201.811081,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop ekrn /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956201.873122,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop ekrn\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956201.951636,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete ekrn\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.252343,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop wscsvc /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.391991,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop wscsvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.47002,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete wscsvc\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.825293,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop TMMyWeb /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.872456,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop TMMyWeb\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956202.907525,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete TMMyWeb\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.237029,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop cmdagent /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.290966,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop cmdagent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.318412,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete cmdagent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.739834,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop SophosConsole /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.849178,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop SophosConsole\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956203.928562,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete SophosConsole\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956204.212628,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop Sophos Anti-Virus /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956204.261187,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop Sophos Anti-Virus\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956204.293002,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete Sophos Anti-Virus\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956204.828526,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop FortiEDR /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956205.02661,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop FortiEDR\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956205.0587,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete FortiEDR\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956205.793263,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop AVP /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956205.917894,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop AVP\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956205.988249,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete AVP\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956206.79051,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop F-Secure Software /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956206.87869,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop F-Secure Software\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956206.927849,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete F-Secure Software\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956207.799228,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop Symantec AntiVirus /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956207.874389,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop Symantec AntiVirus\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956207.914181,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete Symantec AntiVirus\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956208.879455,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop ccSetMgr /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956208.989111,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop ccSetMgr\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956209.041417,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete ccSetMgr\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956209.818817,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop TmProxy /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956210.005271,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop TmProxy\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956210.090456,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete TmProxy\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956210.784644,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop MBAMAgent /y\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956210.844509,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop MBAMAgent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956210.878482,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete MBAMAgent\"",
+        "parent_network_events": 2,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956211.796271,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"net stop swi_service /y\"",
+        "parent_network_events": 1,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956211.876596,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc stop swi_service\"",
+        "parent_network_events": 1,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "defence_evasion_command",
+      "description": "Process ran a shell command that turns off protection or destroys recovery data",
+      "time": 1787956211.909379,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "parent": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "shell": "cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"sc delete swi_service\"",
+        "parent_network_events": 1,
+        "last_destination": "208.95.112.1"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "shadow_copy_deletion",
+      "description": "Process attempted to delete Windows shadow copies",
+      "time": 1787956232.988465,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\vssadmin.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "command_line": "vssadmin  delete shadows /all /quiet"
+      },
+      "weights": {
+        "ransomware": 0.4
+      }
+    },
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956232.988465,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\vssadmin.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\vssadmin.exe",
+        "parent": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "vssadmin  delete shadows /all /quiet"
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 4552,
+    "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+    "children": [
+      {
+        "pid": 10280,
+        "process": "C:\\WINDOWS\\system32\\conhost.exe",
+        "children": []
+      },
+      {
+        "pid": 8440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11592,
+        "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+        "children": []
+      },
+      {
+        "pid": 10776,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4140,
+            "process": "C:\\Windows\\System32\\schtasks.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9360,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2924,
+            "process": "C:\\WINDOWS\\system32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9312,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9944,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7400,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7844,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2536,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7832,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10568,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11740,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8272,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4160,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2460,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11272,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5780,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2140,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11344,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 2288,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3828,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9988,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5508,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9116,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12260,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 3988,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1104,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11872,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11552,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6592,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10136,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3848,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10444,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4432,
+            "process": "C:\\WINDOWS\\system32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6840,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11036,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 4368,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9024,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12064,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11160,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8372,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9380,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11256,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9792,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 1980,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11260,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6032,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11308,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9492,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12160,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9348,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11868,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1560,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12012,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2116,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11396,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11104,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7028,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11580,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10244,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5000,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5464,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": [
+              {
+                "pid": 120,
+                "process": "C:\\WINDOWS\\SysWOW64\\tar.exe",
+                "children": [
+                  {
+                    "pid": 11020,
+                    "process": "C:\\WINDOWS\\system32\\conhost.exe",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "pid": 11380,
+                "process": "C:\\Users\\user\\AppData\\Local\\Temp\\Low_Graphics_Cache\\python\\python.exe",
+                "children": [
+                  {
+                    "pid": 8504,
+                    "process": "C:\\WINDOWS\\system32\\cmd.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10876,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3164,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1276,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10992,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10388,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 8608,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3136,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11920,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11472,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 11504,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11028,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8908,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10404,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10504,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 10572,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11648,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12192,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9428,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9824,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7192,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3628,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3876,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11748,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10384,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3764,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2732,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 7216,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11452,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11680,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11424,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9048,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7084,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11652,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12120,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1404,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 452,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 4092,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10872,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1620,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5792,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1392,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4648,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11200,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10576,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10528,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3872,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11304,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5600,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10496,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5704,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 9808,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9452,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11128,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9644,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9624,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10624,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 7776,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1264,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10612,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6808,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10552,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 600,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 12252,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4620,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9356,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9704,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1124,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3680,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10236,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11352,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12164,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10492,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1444,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 11688,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5832,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10512,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10128,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 9868,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11368,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7240,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3256,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11196,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10376,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6380,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4428,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11544,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8524,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11144,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4592,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9176,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 3560,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 596,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 12116,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11820,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 6960,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4008,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9604,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10856,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10440,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8292,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3840,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6156,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10028,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8796,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10292,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 11928,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 7756,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8900,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9688,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 6076,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9384,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3220,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11992,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 8476,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3768,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10312,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9588,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11532,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 508,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3880,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6664,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11108,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3412,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9600,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1584,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5260,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9252,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10416,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11204,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11640,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3224,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11520,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9696,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11780,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9556,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5916,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9304,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8172,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8388,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6296,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3144,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 10264,
+                "process": "C:\\WINDOWS\\system32\\conhost.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8088,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2900,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 3892,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4084,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5216,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10796,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7096,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10156,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3104,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10508,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10724,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 7660,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10048,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7948,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11512,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9972,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12180,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 628,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 9396,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1772,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 10480,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 4460,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10732,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11092,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 6492,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11324,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 2276,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10016,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9180,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11712,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9192,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 692,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9420,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12104,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 10788,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 5032,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 6088,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 4464,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12188,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 96,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2712,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 644,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12140,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8656,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 7636,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9796,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 336,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 9424,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2740,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4444,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 608,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10396,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11584,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 9860,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 8500,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11480,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5204,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10228,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12088,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11216,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4088,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11420,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10792,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10060,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10224,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5156,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7148,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 3168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9640,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6320,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11116,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2608,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10368,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 3416,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12212,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7368,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11348,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11372,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 10172,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1464,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9540,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9576,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12128,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 12256,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9548,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 11300,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7484,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 4248,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4040,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1544,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3996,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10168,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11172,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 3808,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11052,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3656,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11784,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 4548,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 6616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9960,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 540,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5068,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11432,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9168,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7552,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10500,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10764,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": []
+          },
+          {
+            "pid": 5812,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9564,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10232,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3824,
+                "process": "C:\\Windows\\System32\\sc.exe",
+                "children": []
+              },
+              {
+                "pid": 6340,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7732,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9788,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 6720,
+                "process": "C:\\WINDOWS\\system32\\net.exe",
+                "children": [
+                  {
+                    "pid": 9968,
+                    "process": "C:\\Windows\\System32\\net1.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7780,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4232,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2916,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 392,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 11184,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9440,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11100,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9804,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 2796,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11084,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11884,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9436,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 7956,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6392,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10772,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8260,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5740,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8508,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1672,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 11232,
+                    "process": "C:\\WINDOWS\\system32\\net.exe",
+                    "children": [
+                      {
+                        "pid": 9948,
+                        "process": "C:\\Windows\\System32\\net1.exe",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 5256,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1260,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1328,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10456,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 7520,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1220,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1052,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 12000,
+                    "process": "C:\\Windows\\System32\\net1.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11760,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11468,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 2928,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11056,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11024,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11716,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 4044,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1880,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 12016,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9488,
+            "process": "C:\\Windows\\System32\\taskkill.exe",
+            "children": []
+          },
+          {
+            "pid": 5056,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 4888,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          },
+          {
+            "pid": 7692,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 5940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10912,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 4500,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11072,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 8076,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9904,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9648,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5492,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 3592,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1240,
+            "process": "C:\\Windows\\System32\\net1.exe",
+            "children": []
+          },
+          {
+            "pid": 11668,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8784,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10812,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 4932,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 1524,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12232,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": [
+              {
+                "pid": 1824,
+                "process": "C:\\Windows\\System32\\taskkill.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9940,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 12172,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8080,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 1324,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 9608,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 9464,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9068,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1688,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 6012,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11852,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11060,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5860,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 4024,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9052,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 11156,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9828,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10348,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 10760,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 7608,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 12220,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8228,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9484,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 11488,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5284,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 8556,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11228,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 1416,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 8344,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9572,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9476,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11932,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12268,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10032,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 5804,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 12272,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 11400,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 8812,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9692,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5752,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 12168,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 10324,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          },
+          {
+            "pid": 1296,
+            "process": "C:\\WINDOWS\\system32\\net.exe",
+            "children": [
+              {
+                "pid": 3108,
+                "process": "C:\\Windows\\System32\\net1.exe",
+                "children": [
+                  {
+                    "pid": 10356,
+                    "process": "C:\\Windows\\System32\\sc.exe",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pid": 1236,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9256,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9388,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 808,
+            "process": "C:\\Windows\\System32\\sc.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 9884,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 9900,
+            "process": "C:\\Windows\\System32\\vssadmin.exe",
+            "children": []
+          }
+        ]
+      },
+      {
+        "pid": 1616,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": []
+      },
+      {
+        "pid": 10180,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 11676,
+            "process": "C:\\Windows\\System32\\wbadmin.exe",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

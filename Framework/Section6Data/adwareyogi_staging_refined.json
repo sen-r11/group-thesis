@@ -1,0 +1,287 @@
+{
+  "verdict": "malicious",
+  "family": "rat",
+  "leading_family": "rat",
+  "possible_families": [
+    "rat",
+    "ransomware"
+  ],
+  "score": 0.95,
+  "threshold": 0.7,
+  "events_processed": 6907,
+  "pid": 5136,
+  "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+  "family_scores": {
+    "ransomware": 0.85,
+    "spyware": 0.6,
+    "rat": 0.95
+  },
+  "triggered_indicators": [
+    "suspicious_process_spawn",
+    "process_access",
+    "registry_persistence",
+    "suspicious_dns",
+    "host_discovery",
+    "rapid_file_activity",
+    "suspicious_file_extension",
+    "file_deletion_burst",
+    "suspicious_file_extension",
+    "suspicious_file_extension",
+    "suspicious_file_extension",
+    "c2_beaconing",
+    "c2_beaconing",
+    "c2_beaconing",
+    "c2_beaconing"
+  ],
+  "evidence": [
+    {
+      "indicator": "suspicious_process_spawn",
+      "description": "Process launched a potentially suspicious child process",
+      "time": 1787956014.951742,
+      "event_id": 1,
+      "process": "C:\\Windows\\System32\\cmd.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\cmd.exe",
+        "parent": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c attrib +h +s \"C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Crypto\\px3lp7xi\\73oik57z.exe\""
+      },
+      "weights": {
+        "ransomware": 0.15,
+        "spyware": 0.1,
+        "rat": 0.2
+      }
+    },
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787956014.95193,
+      "event_id": 10,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "target": "C:\\WINDOWS\\system32\\cmd.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "registry_persistence",
+      "description": "Process modified a registry location commonly used for persistence",
+      "time": 1787956015.855485,
+      "event_id": 13,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "registry": "HKU\\S-1-5-21-3668069402-3471658256-2792720188-1000\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsSecurity",
+        "detail": "C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Crypto\\px3lp7xi\\73oik57z.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.25,
+        "rat": 0.25
+      }
+    },
+    {
+      "indicator": "suspicious_dns",
+      "description": "Process running from a user-writable location performed a DNS query",
+      "time": 1787956017.054138,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "dns": "t.me"
+      },
+      "weights": {
+        "ransomware": 0.05,
+        "spyware": 0.1,
+        "rat": 0.15
+      }
+    },
+    {
+      "indicator": "host_discovery",
+      "description": "Process running from a user-writable location looked up the address of this machine",
+      "time": 1787956018.056537,
+      "event_id": 22,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "service": "ifconfig.me",
+        "query": "ifconfig.me"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "rapid_file_activity",
+      "description": "Process performed a large number of file operations in a short time period",
+      "time": 1787956022.619291,
+      "event_id": 11,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "event_count": 5,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe"
+      },
+      "weights": {
+        "ransomware": 0.3
+      }
+    },
+    {
+      "indicator": "suspicious_file_extension",
+      "description": "Process created a file with a suspicious ransomware-style extension",
+      "time": 1787956022.913013,
+      "event_id": 11,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "path": "C:\\Users\\user\\Downloads\\28685dff00aa1752b62a8580955b2530d63092bdcc0528b872a668cddad78c11.zip.enc",
+        "extension": ".enc"
+      },
+      "weights": {
+        "ransomware": 0.25
+      }
+    },
+    {
+      "indicator": "file_deletion_burst",
+      "description": "Process deleted multiple files within a short time period",
+      "time": 1787956022.918422,
+      "event_id": 23,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "deletion_count": 4,
+        "window_seconds": 10.0,
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_file_extension",
+      "description": "Process created a file with a suspicious ransomware-style extension",
+      "time": 1787956023.253921,
+      "event_id": 11,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "path": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.zip.enc",
+        "extension": ".enc"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_file_extension",
+      "description": "Process created a file with a suspicious ransomware-style extension",
+      "time": 1787956023.268867,
+      "event_id": 11,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "path": "C:\\Users\\user\\Downloads\\Sysmon\\Eula.txt.enc",
+        "extension": ".enc"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "suspicious_file_extension",
+      "description": "Process created a file with a suspicious ransomware-style extension",
+      "time": 1787956023.454975,
+      "event_id": 11,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "path": "C:\\Users\\user\\Downloads\\Sysmon.zip.enc",
+        "extension": ".enc"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "c2_beaconing",
+      "description": "Process contacted one outside address at a regular interval",
+      "time": 1787956079.195493,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "destination": "149.154.167.99",
+        "port": 443,
+        "connections": 16,
+        "contacts": 6,
+        "span_seconds": 62.0,
+        "mean_interval_seconds": 12.4,
+        "jitter": 0.129
+      },
+      "weights": {
+        "spyware": 0.15,
+        "rat": 0.35
+      }
+    },
+    {
+      "indicator": "c2_beaconing",
+      "description": "Process contacted one outside address at a regular interval",
+      "time": 1787956079.920503,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "destination": "34.160.111.145",
+        "port": 443,
+        "connections": 89,
+        "contacts": 7,
+        "span_seconds": 61.6,
+        "mean_interval_seconds": 10.3,
+        "jitter": 0.027
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "c2_beaconing",
+      "description": "Process contacted one outside address at a regular interval",
+      "time": 1787956079.920518,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "destination": "104.21.85.170",
+        "port": 443,
+        "connections": 167,
+        "contacts": 7,
+        "span_seconds": 61.6,
+        "mean_interval_seconds": 10.3,
+        "jitter": 0.02
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "c2_beaconing",
+      "description": "Process contacted one outside address at a regular interval",
+      "time": 1787956087.151836,
+      "event_id": 3,
+      "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+      "details": {
+        "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+        "destination": "31.13.73.35",
+        "port": 443,
+        "connections": 17,
+        "contacts": 7,
+        "span_seconds": 69.4,
+        "mean_interval_seconds": 11.6,
+        "jitter": 0.099
+      },
+      "weights": {}
+    }
+  ],
+  "process_tree": {
+    "pid": 5136,
+    "process": "C:\\Users\\user\\Downloads\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9\\b72956e511dc7d916410a281111465d7d9a3220d89fe8611603e4e0004d9afb9.exe",
+    "children": [
+      {
+        "pid": 3880,
+        "process": "C:\\WINDOWS\\system32\\cmd.exe",
+        "children": [
+          {
+            "pid": 5220,
+            "process": "C:\\WINDOWS\\system32\\conhost.exe",
+            "children": []
+          },
+          {
+            "pid": 9284,
+            "process": "C:\\Windows\\System32\\attrib.exe",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

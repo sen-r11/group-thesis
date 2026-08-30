@@ -1,0 +1,55 @@
+{
+  "verdict": "benign",
+  "family": null,
+  "leading_family": "rat",
+  "possible_families": [],
+  "score": 0.35,
+  "threshold": 0.7,
+  "events_processed": 27428,
+  "pid": 1152,
+  "process": "C:\\Windows\\system32\\csrss.exe",
+  "family_scores": {
+    "ransomware": 0.1,
+    "spyware": 0.3,
+    "rat": 0.35
+  },
+  "triggered_indicators": [
+    "process_access",
+    "create_remote_thread"
+  ],
+  "evidence": [
+    {
+      "indicator": "process_access",
+      "description": "Process accessed another process",
+      "time": 1787970778.901241,
+      "event_id": 10,
+      "process": "C:\\Windows\\system32\\csrss.exe",
+      "details": {
+        "process": "C:\\Windows\\system32\\csrss.exe",
+        "target": "C:\\Windows\\System32\\DataExchangeHost.exe"
+      },
+      "weights": {}
+    },
+    {
+      "indicator": "create_remote_thread",
+      "description": "Process created a remote thread inside another process",
+      "time": 1787970903.416531,
+      "event_id": 8,
+      "process": "C:\\Windows\\System32\\csrss.exe",
+      "details": {
+        "process": "C:\\Windows\\System32\\csrss.exe",
+        "target": "C:\\Windows\\System32\\cmd.exe"
+      },
+      "weights": {
+        "ransomware": 0.1,
+        "spyware": 0.3,
+        "rat": 0.35
+      }
+    }
+  ],
+  "process_tree": {
+    "pid": 1152,
+    "process": "C:\\Windows\\system32\\csrss.exe",
+    "children": []
+  }
+}

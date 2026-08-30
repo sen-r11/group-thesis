@@ -108,7 +108,7 @@ def detect(event: dict, store: StateStore, direct_state: ProcessState) -> List[F
             description="Process contacted one outside address at a regular interval",
             weights={
                 "spyware": 0.15,
-                "rat": 0.35,
+                "rat": 0.20,
             },
             fingerprint=f"beacon:{root_pid}:{destination}:{port}",
             score_key=f"beacon:{root_pid}",
