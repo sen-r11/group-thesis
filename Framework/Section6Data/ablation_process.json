@@ -1,0 +1,239 @@
+{
+  "threshold": 0.7,
+  "samples": [
+    {
+      "sample_id": "events.jsonl",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\events.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "malicious",
+      "expected_family": "ransomware",
+      "predicted_family": "ransomware",
+      "score": 0.85,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.85,
+        "spyware": 0.5,
+        "rat": 0.6
+      },
+      "possible_families": [
+        "ransomware"
+      ],
+      "triggered_indicators": [
+        "suspicious_dns",
+        "suspicious_network_connection",
+        "registry_persistence",
+        "suspicious_file_extension",
+        "suspicious_file_extension",
+        "shadow_copy_deletion"
+      ],
+      "events_processed": 9,
+      "events_until_detection": 8,
+      "file_event_count_until_detection": 3,
+      "first_detection_time": 1785230414.775,
+      "detection_delay_seconds": 14.6515
+    },
+    {
+      "sample_id": "benign_test.jsonl",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\benign_test.jsonl",
+      "expected_verdict": "benign",
+      "predicted_verdict": "benign",
+      "expected_family": null,
+      "predicted_family": null,
+      "score": 0.0,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.0,
+        "spyware": 0.0,
+        "rat": 0.0
+      },
+      "possible_families": [],
+      "triggered_indicators": [],
+      "events_processed": 1,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    },
+    {
+      "sample_id": "benign-baseline-20260829",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\benign-baseline-20260829.jsonl",
+      "expected_verdict": "benign",
+      "predicted_verdict": "benign",
+      "expected_family": null,
+      "predicted_family": null,
+      "score": 0.3,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.3,
+        "spyware": 0.0,
+        "rat": 0.0
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "rapid_file_activity",
+        "file_deletion_burst"
+      ],
+      "events_processed": 127643,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    },
+    {
+      "sample_id": "ransomware-adwareyogi-20260828",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\ransomware-adwareyogi-20260828.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "malicious",
+      "expected_family": "ransomware",
+      "predicted_family": "rat",
+      "score": 0.75,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.7,
+        "spyware": 0.5,
+        "rat": 0.75
+      },
+      "possible_families": [
+        "rat",
+        "ransomware"
+      ],
+      "triggered_indicators": [
+        "registry_persistence",
+        "suspicious_dns",
+        "rapid_file_activity",
+        "suspicious_file_extension",
+        "file_deletion_burst",
+        "suspicious_file_extension",
+        "suspicious_file_extension",
+        "suspicious_file_extension",
+        "c2_beaconing",
+        "c2_beaconing",
+        "c2_beaconing",
+        "c2_beaconing"
+      ],
+      "events_processed": 6907,
+      "events_until_detection": 476,
+      "file_event_count_until_detection": 75,
+      "first_detection_time": 1787956022.913013,
+      "detection_delay_seconds": 24.4045
+    },
+    {
+      "sample_id": "ransomware-crpx0-20260828",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\ransomware-crpx0-20260828.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "benign",
+      "expected_family": "ransomware",
+      "predicted_family": null,
+      "score": 0.55,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.55,
+        "spyware": 0.3,
+        "rat": 0.4
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "suspicious_dns",
+        "scheduled_task_persistence",
+        "shadow_copy_deletion"
+      ],
+      "events_processed": 14075,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    },
+    {
+      "sample_id": "rat-remcos-20260828",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\rat-remcos-20260828.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "benign",
+      "expected_family": "rat",
+      "predicted_family": null,
+      "score": 0.65,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.55,
+        "spyware": 0.55,
+        "rat": 0.65
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "rapid_file_activity",
+        "registry_persistence",
+        "scheduled_task_persistence",
+        "scheduled_task_persistence",
+        "suspicious_dns",
+        "file_deletion_burst"
+      ],
+      "events_processed": 235023,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    },
+    {
+      "sample_id": "spyware-agenttesla-20260828",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\spyware-agenttesla-20260828.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "benign",
+      "expected_family": "spyware",
+      "predicted_family": null,
+      "score": 0.3,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.3,
+        "spyware": 0.0,
+        "rat": 0.0
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "rapid_file_activity",
+        "file_deletion_burst"
+      ],
+      "events_processed": 1331,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    },
+    {
+      "sample_id": "spyware-scarfacestealer-20260829",
+      "telemetry_path": "C:\\Users\\manas\\Desktop\\group-thesis-main\\Framework\\Test Data\\spyware-scarfacestealer-20260829.jsonl",
+      "expected_verdict": "malicious",
+      "predicted_verdict": "benign",
+      "expected_family": "spyware",
+      "predicted_family": null,
+      "score": 0.3,
+      "threshold": 0.7,
+      "family_scores": {
+        "ransomware": 0.3,
+        "spyware": 0.0,
+        "rat": 0.0
+      },
+      "possible_families": [],
+      "triggered_indicators": [
+        "rapid_file_activity",
+        "file_deletion_burst"
+      ],
+      "events_processed": 128637,
+      "events_until_detection": null,
+      "file_event_count_until_detection": null,
+      "first_detection_time": null,
+      "detection_delay_seconds": null
+    }
+  ],
+  "metrics": {
+    "true_positive": 2,
+    "false_positive": 0,
+    "true_negative": 2,
+    "false_negative": 4,
+    "accuracy": 0.5,
+    "precision": 1.0,
+    "recall": 0.3333,
+    "f1_score": 0.5,
+    "family_evaluated": 2,
+    "detected_family_classification_accuracy": 0.5,
+    "mean_detection_delay_seconds": 19.528
+  }
+}
