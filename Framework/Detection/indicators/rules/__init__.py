@@ -24,3 +24,4 @@ from Detection.indicators.rules.rat_host_discovery import detect as rat_host_dis
 
 # Spyware additional indicator
 from Detection.indicators.rules.spyware_collection import detect as spyware_collection
+from Detection.indicators.rules.spyware_staging import detect as spyware_staging
